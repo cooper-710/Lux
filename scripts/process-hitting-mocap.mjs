@@ -94,11 +94,9 @@ const REPORT_GRAPH_SPECS = [
   {
     id: "torso-extension-during-rotation-and-blocking-phase",
     title: "Torso Extension During Rotation And Blocking Phase",
-    // The legacy PDF graph for this section points to dominant shoulder horizontal position.
-    // Keep that mapping so the rebuilt graph follows the report reference marker.
-    column: "/Calc/Shoulder/Dominant/Horizontal X",
-    markerTime: 1.977,
-    markerValue: -29.018,
+    column: "/Calc/Trunk/Tilt/ForwardsBackwards X",
+    markerTime: 2.337,
+    markerValue: -19.709,
     unit: "deg",
   },
   {
@@ -322,6 +320,25 @@ function nearestIndex(values, target) {
     if (Math.abs(values[index] - target) < Math.abs(values[best] - target)) best = index;
   }
   return best;
+}
+
+function injectPdfMarkerIntoGraphRows(graphRows, markerTime, markerValue) {
+  const rows = graphRows.map((point) => ({ ...point }));
+  const markerPoint = {
+    time: Number(markerTime.toFixed(3)),
+    value: Number(markerValue.toFixed(3)),
+  };
+  const existingIndex = rows.findIndex((row) => Math.abs(row.time - markerPoint.time) < 0.0001);
+
+  if (existingIndex >= 0) {
+    rows[existingIndex] = markerPoint;
+  } else {
+    const insertAt = rows.findIndex((row) => row.time > markerPoint.time);
+    if (insertAt >= 0) rows.splice(insertAt, 0, markerPoint);
+    else rows.push(markerPoint);
+  }
+
+  return rows.sort((a, b) => a.time - b.time);
 }
 
 function metricPending(name, eyebrow, missingColumn, whyItMatters) {
@@ -683,7 +700,7 @@ async function calculateOutput(workbookPath) {
         value: spec.markerValue,
         label: `${spec.markerValue.toLocaleString(undefined, { maximumFractionDigits: 3 })} ${spec.unit}`,
       },
-      data: graphRows,
+      data: injectPdfMarkerIntoGraphRows(graphRows, spec.markerTime, spec.markerValue),
     };
   });
 

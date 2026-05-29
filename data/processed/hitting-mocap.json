@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T19:32:00.116Z",
+  "generatedAt": "2026-05-29T20:36:17.730Z",
   "source": {
     "workbook": "Gavin_Hitting.xlsx",
     "workbookPath": "data/raw/Gavin_Hitting.xlsx",
@@ -2505,6 +2505,10 @@
           "value": -5.078
         },
         {
+          "time": 2.2,
+          "value": -5.153
+        },
+        {
           "time": 2.213,
           "value": -5.124
         },
@@ -3226,6 +3230,10 @@
         {
           "time": 2.147,
           "value": 116.953
+        },
+        {
+          "time": 2.15,
+          "value": 117.141
         },
         {
           "time": 2.163,
@@ -4007,6 +4015,10 @@
           "value": -22.285
         },
         {
+          "time": 2.333,
+          "value": -22.506
+        },
+        {
           "time": 2.347,
           "value": -23.555
         },
@@ -4722,6 +4734,10 @@
           "value": 29.422
         },
         {
+          "time": 2.26,
+          "value": 29.575
+        },
+        {
           "time": 2.263,
           "value": 29.291
         },
@@ -5398,7 +5414,7 @@
         },
         {
           "time": 2.013,
-          "value": -27.766
+          "value": -27.805
         },
         {
           "time": 2.03,
@@ -6212,6 +6228,10 @@
           "value": 78.563
         },
         {
+          "time": 2.333,
+          "value": 80.725
+        },
+        {
           "time": 2.347,
           "value": 86.689
         },
@@ -6948,7 +6968,7 @@
         },
         {
           "time": 2.347,
-          "value": 10.369
+          "value": 10.437
         },
         {
           "time": 2.363,
@@ -7658,6 +7678,10 @@
           "value": -12.336
         },
         {
+          "time": 2.231,
+          "value": -12.369
+        },
+        {
           "time": 2.247,
           "value": -12.247
         },
@@ -8334,7 +8358,7 @@
         },
         {
           "time": 1.997,
-          "value": 5.602
+          "value": 5.627
         },
         {
           "time": 2.013,
@@ -8583,733 +8607,737 @@
       "title": "Torso Extension During Rotation And Blocking Phase",
       "status": "Ready",
       "unit": "deg",
-      "sourceColumn": "/Calc/Shoulder/Dominant/Horizontal X",
+      "sourceColumn": "/Calc/Trunk/Tilt/ForwardsBackwards X",
       "pdfMarkerAligned": true,
       "marker": {
-        "time": 1.977,
-        "value": -29.018,
-        "label": "-29.018 deg"
+        "time": 2.337,
+        "value": -19.709,
+        "label": "-19.709 deg"
       },
       "data": [
         {
           "time": 0.01,
-          "value": 5.298
+          "value": 2.674
         },
         {
           "time": 0.027,
-          "value": 12.756
+          "value": 2.057
         },
         {
           "time": 0.043,
-          "value": 20.536
+          "value": 1.261
         },
         {
           "time": 0.06,
-          "value": 25.575
+          "value": 0.601
         },
         {
           "time": 0.077,
-          "value": 28.161
+          "value": 0.253
         },
         {
           "time": 0.093,
-          "value": 29.222
+          "value": 0.258
         },
         {
           "time": 0.11,
-          "value": 29.713
+          "value": 0.529
         },
         {
           "time": 0.127,
-          "value": 30.564
+          "value": 0.938
         },
         {
           "time": 0.143,
-          "value": 31.991
+          "value": 1.384
         },
         {
           "time": 0.16,
-          "value": 33.306
+          "value": 1.791
         },
         {
           "time": 0.177,
-          "value": 34.12
+          "value": 2.059
         },
         {
           "time": 0.193,
-          "value": 34.772
+          "value": 2.128
         },
         {
           "time": 0.21,
-          "value": 35.514
+          "value": 2.029
         },
         {
           "time": 0.227,
-          "value": 36.339
+          "value": 1.853
         },
         {
           "time": 0.243,
-          "value": 37.063
+          "value": 1.691
         },
         {
           "time": 0.26,
-          "value": 37.291
+          "value": 1.582
         },
         {
           "time": 0.277,
-          "value": 36.77
+          "value": 1.484
         },
         {
           "time": 0.293,
-          "value": 35.809
+          "value": 1.336
         },
         {
           "time": 0.31,
-          "value": 34.932
+          "value": 1.154
         },
         {
           "time": 0.327,
-          "value": 34.185
+          "value": 1.03
         },
         {
           "time": 0.343,
-          "value": 33.434
+          "value": 1.027
         },
         {
           "time": 0.36,
-          "value": 32.883
+          "value": 1.111
         },
         {
           "time": 0.377,
-          "value": 32.609
+          "value": 1.224
         },
         {
           "time": 0.393,
-          "value": 32.45
+          "value": 1.342
         },
         {
           "time": 0.41,
-          "value": 32.6
+          "value": 1.455
         },
         {
           "time": 0.427,
-          "value": 33.095
+          "value": 1.534
         },
         {
           "time": 0.443,
-          "value": 33.425
+          "value": 1.544
         },
         {
           "time": 0.46,
-          "value": 33.14
+          "value": 1.493
         },
         {
           "time": 0.477,
-          "value": 32.269
+          "value": 1.46
         },
         {
           "time": 0.493,
-          "value": 31.297
+          "value": 1.521
         },
         {
           "time": 0.51,
-          "value": 30.602
+          "value": 1.659
         },
         {
           "time": 0.527,
-          "value": 30.089
+          "value": 1.781
         },
         {
           "time": 0.543,
-          "value": 29.728
+          "value": 1.819
         },
         {
           "time": 0.56,
-          "value": 29.96
+          "value": 1.765
         },
         {
           "time": 0.577,
-          "value": 30.939
+          "value": 1.696
         },
         {
           "time": 0.593,
-          "value": 32.028
+          "value": 1.733
         },
         {
           "time": 0.61,
-          "value": 32.408
+          "value": 1.918
         },
         {
           "time": 0.627,
-          "value": 31.826
+          "value": 2.159
         },
         {
           "time": 0.643,
-          "value": 30.742
+          "value": 2.36
         },
         {
           "time": 0.66,
-          "value": 29.731
+          "value": 2.536
         },
         {
           "time": 0.677,
-          "value": 29.056
+          "value": 2.755
         },
         {
           "time": 0.693,
-          "value": 28.749
+          "value": 2.983
         },
         {
           "time": 0.71,
-          "value": 28.764
+          "value": 3.132
         },
         {
           "time": 0.727,
-          "value": 29.055
+          "value": 3.22
         },
         {
           "time": 0.743,
-          "value": 29.698
+          "value": 3.318
         },
         {
           "time": 0.76,
-          "value": 30.849
+          "value": 3.383
         },
         {
           "time": 0.777,
-          "value": 32.172
+          "value": 3.318
         },
         {
           "time": 0.793,
-          "value": 33.051
+          "value": 3.125
         },
         {
           "time": 0.81,
-          "value": 33.385
+          "value": 2.902
         },
         {
           "time": 0.827,
-          "value": 33.345
+          "value": 2.748
         },
         {
           "time": 0.843,
-          "value": 33.036
+          "value": 2.707
         },
         {
           "time": 0.86,
-          "value": 32.738
+          "value": 2.777
         },
         {
           "time": 0.877,
-          "value": 32.844
+          "value": 2.936
         },
         {
           "time": 0.893,
-          "value": 33.255
+          "value": 3.131
         },
         {
           "time": 0.91,
-          "value": 33.481
+          "value": 3.26
         },
         {
           "time": 0.927,
-          "value": 33.133
+          "value": 3.243
         },
         {
           "time": 0.943,
-          "value": 32.129
+          "value": 3.095
         },
         {
           "time": 0.96,
-          "value": 30.774
+          "value": 2.884
         },
         {
           "time": 0.977,
-          "value": 29.653
+          "value": 2.664
         },
         {
           "time": 0.993,
-          "value": 29.501
+          "value": 2.478
         },
         {
           "time": 1.01,
-          "value": 30.711
+          "value": 2.395
         },
         {
           "time": 1.027,
-          "value": 32.54
+          "value": 2.449
         },
         {
           "time": 1.043,
-          "value": 33.785
+          "value": 2.573
         },
         {
           "time": 1.06,
-          "value": 34.36
+          "value": 2.638
         },
         {
           "time": 1.077,
-          "value": 34.876
+          "value": 2.568
         },
         {
           "time": 1.093,
-          "value": 35.15
+          "value": 2.384
         },
         {
           "time": 1.11,
-          "value": 34.937
+          "value": 2.168
         },
         {
           "time": 1.127,
-          "value": 34.899
+          "value": 1.993
         },
         {
           "time": 1.143,
-          "value": 35.247
+          "value": 1.888
         },
         {
           "time": 1.16,
-          "value": 35.399
+          "value": 1.811
         },
         {
           "time": 1.177,
-          "value": 35.31
+          "value": 1.719
         },
         {
           "time": 1.193,
-          "value": 35.52
+          "value": 1.656
         },
         {
           "time": 1.21,
-          "value": 36.484
+          "value": 1.728
         },
         {
           "time": 1.227,
-          "value": 38.266
+          "value": 1.962
         },
         {
           "time": 1.243,
-          "value": 40.455
+          "value": 2.227
         },
         {
           "time": 1.26,
-          "value": 42.592
+          "value": 2.332
         },
         {
           "time": 1.277,
-          "value": 44.478
+          "value": 2.196
         },
         {
           "time": 1.293,
-          "value": 45.541
+          "value": 1.906
         },
         {
           "time": 1.31,
-          "value": 45.153
+          "value": 1.63
         },
         {
           "time": 1.327,
-          "value": 43.905
+          "value": 1.495
         },
         {
           "time": 1.343,
-          "value": 43.217
+          "value": 1.531
         },
         {
           "time": 1.36,
-          "value": 43.654
+          "value": 1.665
         },
         {
           "time": 1.377,
-          "value": 44.552
+          "value": 1.783
         },
         {
           "time": 1.393,
-          "value": 44.859
+          "value": 1.818
         },
         {
           "time": 1.41,
-          "value": 44.489
+          "value": 1.831
         },
         {
           "time": 1.427,
-          "value": 44.69
+          "value": 1.987
         },
         {
           "time": 1.443,
-          "value": 46.787
+          "value": 2.355
         },
         {
           "time": 1.46,
-          "value": 50.263
+          "value": 2.769
         },
         {
           "time": 1.477,
-          "value": 53.047
+          "value": 2.981
         },
         {
           "time": 1.493,
-          "value": 53.966
+          "value": 2.893
         },
         {
           "time": 1.513,
-          "value": 53.512
+          "value": 2.599
         },
         {
           "time": 1.53,
-          "value": 52.671
+          "value": 2.496
         },
         {
           "time": 1.547,
-          "value": 51.333
+          "value": 2.654
         },
         {
           "time": 1.563,
-          "value": 49.199
+          "value": 2.934
         },
         {
           "time": 1.58,
-          "value": 46.331
+          "value": 3.102
         },
         {
           "time": 1.597,
-          "value": 43.061
+          "value": 3.061
         },
         {
           "time": 1.613,
-          "value": 39.76
+          "value": 2.89
         },
         {
           "time": 1.63,
-          "value": 36.842
+          "value": 2.712
         },
         {
           "time": 1.647,
-          "value": 34.422
+          "value": 2.554
         },
         {
           "time": 1.663,
-          "value": 32.253
+          "value": 2.306
         },
         {
           "time": 1.68,
-          "value": 30.615
+          "value": 1.791
         },
         {
           "time": 1.697,
-          "value": 30.268
+          "value": 0.999
         },
         {
           "time": 1.713,
-          "value": 30.788
+          "value": 0.234
         },
         {
           "time": 1.73,
-          "value": 30.893
+          "value": -0.16
         },
         {
           "time": 1.747,
-          "value": 29.936
+          "value": -0.152
         },
         {
           "time": 1.763,
-          "value": 27.815
+          "value": 0.082
         },
         {
           "time": 1.78,
-          "value": 24.709
+          "value": 0.415
         },
         {
           "time": 1.797,
-          "value": 21.267
+          "value": 0.758
         },
         {
           "time": 1.813,
-          "value": 18.101
+          "value": 1.022
         },
         {
           "time": 1.83,
-          "value": 15.088
+          "value": 1.138
         },
         {
           "time": 1.847,
-          "value": 11.542
+          "value": 1.106
         },
         {
           "time": 1.863,
-          "value": 6.976
+          "value": 1.084
         },
         {
           "time": 1.88,
-          "value": 1.273
+          "value": 1.366
         },
         {
           "time": 1.897,
-          "value": -5.41
+          "value": 2.097
         },
         {
           "time": 1.913,
-          "value": -12.37
+          "value": 3.023
         },
         {
           "time": 1.93,
-          "value": -18.513
+          "value": 3.741
         },
         {
           "time": 1.947,
-          "value": -23.292
+          "value": 4.182
         },
         {
           "time": 1.963,
-          "value": -26.965
+          "value": 4.594
         },
         {
           "time": 1.98,
-          "value": -29.183
+          "value": 5.146
         },
         {
           "time": 1.997,
-          "value": -28.69
+          "value": 5.602
         },
         {
           "time": 2.013,
-          "value": -25.3
+          "value": 5.46
         },
         {
           "time": 2.03,
-          "value": -21.015
+          "value": 4.446
         },
         {
           "time": 2.047,
-          "value": -18.385
+          "value": 2.756
         },
         {
           "time": 2.063,
-          "value": -18.35
+          "value": 0.855
         },
         {
           "time": 2.08,
-          "value": -19.859
+          "value": -0.862
         },
         {
           "time": 2.097,
-          "value": -20.952
+          "value": -2.264
         },
         {
           "time": 2.113,
-          "value": -19.867
+          "value": -3.429
         },
         {
           "time": 2.13,
-          "value": -15.827
+          "value": -4.47
         },
         {
           "time": 2.147,
-          "value": -9.47
+          "value": -5.415
         },
         {
           "time": 2.163,
-          "value": -2.228
+          "value": -6.241
         },
         {
           "time": 2.18,
-          "value": 5.026
+          "value": -6.97
         },
         {
           "time": 2.197,
-          "value": 12.545
+          "value": -7.725
         },
         {
           "time": 2.213,
-          "value": 20.168
+          "value": -8.659
         },
         {
           "time": 2.23,
-          "value": 26.857
+          "value": -9.858
         },
         {
           "time": 2.247,
-          "value": 31.687
+          "value": -11.252
         },
         {
           "time": 2.263,
-          "value": 33.799
+          "value": -12.671
         },
         {
           "time": 2.28,
-          "value": 33.245
+          "value": -14.045
         },
         {
           "time": 2.297,
-          "value": 32.506
+          "value": -15.497
         },
         {
           "time": 2.313,
-          "value": 34.993
+          "value": -17.171
         },
         {
           "time": 2.33,
-          "value": 42.051
+          "value": -18.992
+        },
+        {
+          "time": 2.337,
+          "value": -19.709
         },
         {
           "time": 2.347,
-          "value": 53.094
+          "value": -20.65
         },
         {
           "time": 2.363,
-          "value": 66.405
+          "value": -21.805
         },
         {
           "time": 2.38,
-          "value": 79.158
+          "value": -22.338
         },
         {
           "time": 2.397,
-          "value": 88.757
+          "value": -22.364
         },
         {
           "time": 2.413,
-          "value": 94.334
+          "value": -22.047
         },
         {
           "time": 2.43,
-          "value": 96.85
+          "value": -21.523
         },
         {
           "time": 2.447,
-          "value": 98.163
+          "value": -20.931
         },
         {
           "time": 2.463,
-          "value": 99.937
+          "value": -20.327
         },
         {
           "time": 2.48,
-          "value": 102.699
+          "value": -19.702
         },
         {
           "time": 2.497,
-          "value": 105.493
+          "value": -19.152
         },
         {
           "time": 2.513,
-          "value": 107.106
+          "value": -18.784
         },
         {
           "time": 2.53,
-          "value": 106.924
+          "value": -18.365
         },
         {
           "time": 2.547,
-          "value": 104.932
+          "value": -17.348
         },
         {
           "time": 2.563,
-          "value": 102.241
+          "value": -15.526
         },
         {
           "time": 2.58,
-          "value": 100.035
+          "value": -13.316
         },
         {
           "time": 2.597,
-          "value": 98.317
+          "value": -11.153
         },
         {
           "time": 2.613,
-          "value": 96.977
+          "value": -9.141
         },
         {
           "time": 2.63,
-          "value": 96.916
+          "value": -7.297
         },
         {
           "time": 2.647,
-          "value": 98.553
+          "value": -5.783
         },
         {
           "time": 2.663,
-          "value": 100.248
+          "value": -4.783
         },
         {
           "time": 2.68,
-          "value": 99.934
+          "value": -4.269
         },
         {
           "time": 2.697,
-          "value": 97.286
+          "value": -3.973
         },
         {
           "time": 2.713,
-          "value": 93.823
+          "value": -3.586
         },
         {
           "time": 2.73,
-          "value": 91.23
+          "value": -3.008
         },
         {
           "time": 2.747,
-          "value": 89.525
+          "value": -2.417
         },
         {
           "time": 2.763,
-          "value": 87.507
+          "value": -2.06
         },
         {
           "time": 2.78,
-          "value": 84.732
+          "value": -2.01
         },
         {
           "time": 2.797,
-          "value": 81.75
+          "value": -2.125
         },
         {
           "time": 2.813,
-          "value": 78.749
+          "value": -2.178
         },
         {
           "time": 2.83,
-          "value": 75.689
+          "value": -1.993
         },
         {
           "time": 2.847,
-          "value": 73.436
+          "value": -1.555
         },
         {
           "time": 2.863,
-          "value": 72.542
+          "value": -1.024
         },
         {
           "time": 2.88,
-          "value": 71.872
+          "value": -0.65
         },
         {
           "time": 2.897,
-          "value": 70.121
+          "value": -0.674
         },
         {
           "time": 2.913,
-          "value": 67.775
+          "value": -1.215
         },
         {
           "time": 2.93,
-          "value": 66.463
+          "value": -2.139
         },
         {
           "time": 2.947,
-          "value": 66.713
+          "value": -3.084
         },
         {
           "time": 2.963,
-          "value": 67.528
+          "value": -3.736
         },
         {
           "time": 2.98,
-          "value": 68.015
+          "value": -4.034
         },
         {
           "time": 2.997,
-          "value": 68.152
+          "value": -4.109
         }
       ]
     },
@@ -9797,6 +9825,10 @@
         {
           "time": 1.963,
           "value": -26.965
+        },
+        {
+          "time": 1.977,
+          "value": -29.018
         },
         {
           "time": 1.98,
@@ -10606,6 +10638,10 @@
           "value": -14.291
         },
         {
+          "time": 2.277,
+          "value": -12.482
+        },
+        {
           "time": 2.28,
           "value": -12.344
         },
@@ -11357,6 +11393,10 @@
           "value": -22.285
         },
         {
+          "time": 2.333,
+          "value": -22.506
+        },
+        {
           "time": 2.347,
           "value": -23.555
         },
@@ -12069,6 +12109,10 @@
         },
         {
           "time": 2.247,
+          "value": 0.565
+        },
+        {
+          "time": 2.25,
           "value": 0.565
         },
         {
