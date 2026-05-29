@@ -139,13 +139,15 @@ function MovementReasoningSection({
 function MocapReportFindings({ report }: { report: MocapPdfReport }) {
   return (
     <div className="report-panel print-break-avoid p-6 md:p-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sequence-orange">{report.findings.title}</p>
-      <div className="mt-7 max-w-5xl space-y-5 text-lg leading-8 text-zinc-300">
+      <div className="mx-auto max-w-5xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sequence-orange">{report.findings.title}</p>
+      </div>
+      <div className="mx-auto mt-7 max-w-5xl space-y-5 text-lg leading-8 text-zinc-300">
         {report.findings.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
       </div>
-      <div className="mt-8 grid gap-5 border-t border-white/10 pt-6 lg:grid-cols-2">
+      <div className="mx-auto mt-8 grid max-w-5xl gap-5 border-t border-white/10 pt-6 lg:grid-cols-2">
         <div>
           <p className="text-[10px] font-semibold uppercase tracking-[0.2em] text-zinc-600">Optimal Kinematic Sequence</p>
           <p className="mt-3 text-xl font-medium text-white">{report.findings.optimalSequence}</p>
@@ -215,8 +217,10 @@ function MocapNarrativeSection({
 function MocapSuggestions({ report }: { report: MocapPdfReport }) {
   return (
     <div className="report-panel print-break-avoid p-6 md:p-8">
-      <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sequence-orange">{report.suggestions.title}</p>
-      <div className="mt-7 max-w-5xl space-y-5 text-lg leading-8 text-zinc-300">
+      <div className="mx-auto max-w-5xl">
+        <p className="text-xs font-semibold uppercase tracking-[0.24em] text-sequence-orange">{report.suggestions.title}</p>
+      </div>
+      <div className="mx-auto mt-7 max-w-5xl space-y-5 text-lg leading-8 text-zinc-300">
         {report.suggestions.paragraphs.map((paragraph) => (
           <p key={paragraph}>{paragraph}</p>
         ))}
@@ -283,17 +287,6 @@ export default function Home() {
             {movementSection.report.sections.map((section, index) => (
               <MovementReasoningSection key={section.id} section={section} index={index} />
             ))}
-            <SectionNav
-              cards={[
-                {
-                  id: "hitting",
-                  number: "Next",
-                  title: "Hitting Motion Capture",
-                  detail: "Continue into swing sequence and metric-by-metric report.",
-                },
-              ]}
-              onNavigate={handleNavigate}
-            />
           </div>
         </ReportSection>
 
@@ -314,24 +307,6 @@ export default function Home() {
               </div>
             </div>
             <MocapSuggestions report={hittingSection.report} />
-            <SectionNav
-              compact
-              cards={[
-                {
-                  id: "movement",
-                  number: "Previous",
-                  title: "Movement Assessment",
-                  detail: "Return to readiness context.",
-                },
-                {
-                  id: "throwing",
-                  number: "Next",
-                  title: "Throwing Motion Capture",
-                  detail: "Review throwing transfer and durability indicators.",
-                },
-              ]}
-              onNavigate={handleNavigate}
-            />
           </div>
         </ReportSection>
 
@@ -352,17 +327,6 @@ export default function Home() {
               </div>
             </div>
             <MocapSuggestions report={throwingSection.report} />
-            <SectionNav
-              cards={[
-                {
-                  id: "hitting",
-                  number: "Previous",
-                  title: "Hitting Motion Capture",
-                  detail: "Return to swing sequence and lead-side posting.",
-                },
-              ]}
-              onNavigate={handleNavigate}
-            />
           </div>
         </ReportSection>
       </main>

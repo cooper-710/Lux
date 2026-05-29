@@ -29,7 +29,7 @@ export default function SectionNav({ cards, onNavigate, compact = false, promine
             className={cn(
               "group rounded-surface border border-white/10 bg-white/[0.025] text-left transition-all",
               "hover:border-sequence-orange/45 hover:bg-white/[0.04]",
-              card.detail ? "p-6" : prominent ? "min-h-[7.5rem] p-6 md:min-h-[8.5rem] md:p-8 lg:min-h-[9.5rem] lg:px-10" : "p-5 md:p-6",
+              card.detail ? "p-6 md:p-8" : prominent ? "min-h-[7.5rem] p-6 md:min-h-[8.5rem] md:p-8 lg:min-h-[9.5rem] lg:px-10" : "p-5 md:p-6",
             )}
           >
             {card.detail ? (
@@ -39,7 +39,6 @@ export default function SectionNav({ cards, onNavigate, compact = false, promine
                   <ArrowIcon className="h-4 w-4 shrink-0 text-zinc-500 transition-colors group-hover:text-sequence-orange" />
                 </div>
                 <h3 className="text-2xl font-semibold tracking-[-0.02em] text-white">{card.title}</h3>
-                <p className="mt-4 text-sm leading-6 text-zinc-500">{card.detail}</p>
               </>
             ) : (
               <div className={cn("flex items-center justify-between", prominent ? "gap-6" : "gap-4")}>
