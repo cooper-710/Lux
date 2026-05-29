@@ -1,0 +1,88 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  background: #050505;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  background: #050505;
+}
+
+body {
+  min-height: 100vh;
+  margin: 0;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.025), transparent 360px),
+    #050505;
+  color: #f4f4f5;
+  font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: rgba(255, 138, 61, 0.34);
+  color: #fff;
+}
+
+section {
+  scroll-margin-top: 112px;
+}
+
+.report-panel {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 0.25rem;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.045), rgba(255, 255, 255, 0.018));
+  box-shadow: 0 24px 80px rgba(0, 0, 0, 0.3);
+  overflow: hidden;
+}
+
+.thin-divider {
+  background: rgba(255, 255, 255, 0.1);
+  height: 1px;
+  width: 100%;
+}
+
+.print-break-avoid {
+  break-inside: avoid;
+  page-break-inside: avoid;
+}
+
+@media print {
+  :root,
+  html,
+  body {
+    background: #050505 !important;
+    color: #f4f4f5 !important;
+  }
+
+  body {
+    print-color-adjust: exact;
+    -webkit-print-color-adjust: exact;
+  }
+
+  .print-hidden {
+    display: none !important;
+  }
+
+  main {
+    max-width: none !important;
+    padding: 0 !important;
+  }
+
+  section {
+    scroll-margin-top: 0;
+    padding-top: 36px !important;
+  }
+
+  .report-panel {
+    box-shadow: none !important;
+  }
+}
