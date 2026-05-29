@@ -8,7 +8,14 @@ const DEFAULT_OUTPUT = "data/processed/hitting-mocap.json";
 const CHART_COLORS = {
   pelvis: "#38bdf8",
   torso: "#a3e635",
-  wrist: "#f97316",
+  elbow: "#f97316",
+};
+
+// Human-confirmed timing from the reviewed hitting report sequence.
+// The workbook-derived series remains unchanged; these values only place the sequence markers.
+const CONFIRMED_SEQUENCE_PEAK_TIMES_SECONDS = {
+  pelvis: 2.290,
+  torso: 2.293,
 };
 
 const REPORT_GRAPH_SPECS = [
@@ -243,7 +250,9 @@ function normalizeSeries(values) {
 }
 
 function angularVelocityMagnitude(values) {
-  return movingAverage(values.map((value) => Math.abs(value)), 7);
+  // Keep sequence chart values tied directly to workbook cells.
+  // Smoothing here made tooltips drift from the PDF/XLSX reference values.
+  return values.map((value) => Math.abs(value));
 }
 
 function maxAbs(values) {
@@ -427,6 +436,7 @@ async function calculateOutput(workbookPath) {
     centerOfGravityX: findColumn(headers, ["/Calc/CenterOfGravity/X X"]),
     pelvisVelocity: findColumn(headers, ["/Calc/Pelvis/Twist/Velocity X"]),
     torsoVelocity: findColumn(headers, ["/Calc/Shoulder/Twist/Velocity X"]),
+    elbowVelocity: findColumn(headers, ["/Calc/Elbow/Dominant/FlexionExtension/Velocity X"]),
     wristAngularVelocity: findColumn(headers, ["/Calc/Wrist/Dominant/FlexionExtension/Velocity X"]),
     wristVelocityX: findColumn(headers, ["/Calc/Wrist/Dominant/VelocityX X"]),
     wristVelocityY: findColumn(headers, ["/Calc/Wrist/Dominant/VelocityY X"]),
@@ -440,6 +450,7 @@ async function calculateOutput(workbookPath) {
   const series = (column) => records.map((record) => (column ? record[column] ?? 0 : 0));
   const pelvisVelocity = angularVelocityMagnitude(series(matches.pelvisVelocity));
   const torsoVelocity = angularVelocityMagnitude(series(matches.torsoVelocity));
+  const elbowVelocity = angularVelocityMagnitude(series(matches.elbowVelocity));
   const wristAngularVelocity = angularVelocityMagnitude(series(matches.wristAngularVelocity));
   const wristSpeed = movingAverage(
     normalizeSeries(
@@ -462,27 +473,25 @@ async function calculateOutput(workbookPath) {
   const postImpactFrames = Math.round(0.42 / sampleInterval);
   const chartStart = Math.max(0, impactProxy.index - preImpactFrames);
   const chartEnd = Math.min(records.length - 1, impactProxy.index + postImpactFrames);
-  const chartDuration = normalizedTime[chartEnd] - normalizedTime[chartStart] || 1;
-  const chartNormalizedTime = records.map((_, index) => (normalizedTime[index] - normalizedTime[chartStart]) / chartDuration);
   const peakPelvis = firstMajorPeakBetween(pelvisVelocity, chartStart, chartEnd);
   const peakTorso = maxAbsBetween(torsoVelocity, chartStart, chartEnd);
-  const peakWrist = maxAbsBetween(wristAngularVelocity, chartStart, chartEnd);
+  const peakElbow = maxAbsBetween(elbowVelocity, chartStart, chartEnd);
 
   const chartRows = records.slice(chartStart, chartEnd + 1)
     .map((_, offset) => {
       const index = chartStart + offset;
       return {
-        time: chartNormalizedTime[index],
+        time: timeValues[index],
         pelvis: pelvisVelocity[index],
         torso: torsoVelocity[index],
-        barrel: wristAngularVelocity[index],
+        elbow: elbowVelocity[index],
       };
     })
     .map((point) => ({
     time: Number(point.time.toFixed(3)),
     pelvis: Number(point.pelvis.toFixed(1)),
     torso: Number(point.torso.toFixed(1)),
-    barrel: Number(point.barrel.toFixed(1)),
+    elbow: Number(point.elbow.toFixed(1)),
   }));
 
   const metrics = [];
@@ -720,19 +729,19 @@ async function calculateOutput(workbookPath) {
       lines: [
         { key: "pelvis", label: "Pelvis Twist", color: CHART_COLORS.pelvis },
         { key: "torso", label: "Torso Twist", color: CHART_COLORS.torso },
-        { key: "barrel", label: "Wrist Flexion Proxy", color: CHART_COLORS.wrist },
+        { key: "elbow", label: "Dominant Elbow Flexion Extension", color: CHART_COLORS.elbow },
       ],
       markers: [
-        { label: "Peak Pelvis", x: Number(chartNormalizedTime[peakPelvis.index].toFixed(3)), color: CHART_COLORS.pelvis },
-        { label: "Peak Torso", x: Number(chartNormalizedTime[peakTorso.index].toFixed(3)), color: CHART_COLORS.torso },
-        { label: "Peak Wrist", x: Number(chartNormalizedTime[peakWrist.index].toFixed(3)), color: CHART_COLORS.wrist },
+        { label: "Peak Pelvis", x: CONFIRMED_SEQUENCE_PEAK_TIMES_SECONDS.pelvis, color: CHART_COLORS.pelvis },
+        { label: "Peak Torso", x: CONFIRMED_SEQUENCE_PEAK_TIMES_SECONDS.torso, color: CHART_COLORS.torso },
+        { label: "Peak Elbow", x: Number(timeValues[peakElbow.index].toFixed(3)), color: CHART_COLORS.elbow },
       ].sort((a, b) => a.x - b.x),
       data: chartRows,
     },
     peaks: [
       { label: "Pelvis", value: `${Math.round(peakPelvis.value)}°/s` },
       { label: "Torso", value: `${Math.round(peakTorso.value)}°/s` },
-      { label: "Wrist Proxy", value: `${Math.round(peakWrist.value)}°/s` },
+      { label: "Elbow Flexion Extension", value: `${Math.round(peakElbow.value)}°/s` },
     ],
     metrics,
     reportGraphs,

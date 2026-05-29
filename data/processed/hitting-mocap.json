@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-05-29T16:52:46.010Z",
+  "generatedAt": "2026-05-29T19:32:00.116Z",
   "source": {
     "workbook": "Gavin_Hitting.xlsx",
     "workbookPath": "data/raw/Gavin_Hitting.xlsx",
@@ -28,6 +28,7 @@
       "centerOfGravityX": "/Calc/CenterOfGravity/X X",
       "pelvisVelocity": "/Calc/Pelvis/Twist/Velocity X",
       "torsoVelocity": "/Calc/Shoulder/Twist/Velocity X",
+      "elbowVelocity": "/Calc/Elbow/Dominant/FlexionExtension/Velocity X",
       "wristAngularVelocity": "/Calc/Wrist/Dominant/FlexionExtension/Velocity X",
       "wristVelocityX": "/Calc/Wrist/Dominant/VelocityX X",
       "wristVelocityY": "/Calc/Wrist/Dominant/VelocityY X",
@@ -108,1615 +109,1615 @@
         "color": "#a3e635"
       },
       {
-        "key": "barrel",
-        "label": "Wrist Flexion Proxy",
+        "key": "elbow",
+        "label": "Dominant Elbow Flexion Extension",
         "color": "#f97316"
       }
     ],
     "markers": [
       {
-        "label": "Peak Torso",
-        "x": 0.502,
-        "color": "#a3e635"
-      },
-      {
         "label": "Peak Pelvis",
-        "x": 0.506,
+        "x": 2.29,
         "color": "#38bdf8"
       },
       {
-        "label": "Peak Wrist",
-        "x": 0.556,
+        "label": "Peak Torso",
+        "x": 2.293,
+        "color": "#a3e635"
+      },
+      {
+        "label": "Peak Elbow",
+        "x": 2.337,
         "color": "#f97316"
       }
     ],
     "data": [
       {
-        "time": 0,
-        "pelvis": 114.1,
-        "torso": 16.3,
-        "barrel": 35.9
+        "time": 1.853,
+        "pelvis": 114.9,
+        "torso": 14.7,
+        "elbow": 85.1
       },
       {
-        "time": 0.004,
-        "pelvis": 110.3,
-        "torso": 21.4,
-        "barrel": 29.7
+        "time": 1.857,
+        "pelvis": 111.3,
+        "torso": 19.8,
+        "elbow": 86.2
       },
       {
-        "time": 0.008,
-        "pelvis": 105.9,
-        "torso": 27.4,
-        "barrel": 23.9
+        "time": 1.86,
+        "pelvis": 107.2,
+        "torso": 25.7,
+        "elbow": 84.4
       },
       {
-        "time": 0.011,
-        "pelvis": 101,
-        "torso": 34.2,
-        "barrel": 20.6
+        "time": 1.863,
+        "pelvis": 102.5,
+        "torso": 32.5,
+        "elbow": 80.5
       },
       {
-        "time": 0.015,
-        "pelvis": 95.4,
-        "torso": 41.7,
-        "barrel": 19.8
+        "time": 1.867,
+        "pelvis": 97,
+        "torso": 40.2,
+        "elbow": 75.4
       },
       {
-        "time": 0.019,
-        "pelvis": 89.2,
-        "torso": 49.8,
-        "barrel": 21.8
+        "time": 1.87,
+        "pelvis": 90.7,
+        "torso": 48.6,
+        "elbow": 70.3
       },
       {
-        "time": 0.023,
-        "pelvis": 82.2,
-        "torso": 58.4,
-        "barrel": 26.5
-      },
-      {
-        "time": 0.027,
-        "pelvis": 74.7,
-        "torso": 67.3,
-        "barrel": 33.8
-      },
-      {
-        "time": 0.031,
-        "pelvis": 66.7,
-        "torso": 76.1,
-        "barrel": 43.7
-      },
-      {
-        "time": 0.034,
-        "pelvis": 58.4,
-        "torso": 84.5,
-        "barrel": 54.1
-      },
-      {
-        "time": 0.038,
-        "pelvis": 50,
-        "torso": 92.1,
-        "barrel": 63
-      },
-      {
-        "time": 0.042,
-        "pelvis": 41.8,
-        "torso": 98.4,
-        "barrel": 69.8
-      },
-      {
-        "time": 0.046,
-        "pelvis": 34,
-        "torso": 102.9,
-        "barrel": 74.5
-      },
-      {
-        "time": 0.05,
-        "pelvis": 26.9,
-        "torso": 105.1,
-        "barrel": 77
-      },
-      {
-        "time": 0.054,
-        "pelvis": 20.7,
-        "torso": 104.7,
-        "barrel": 77.6
-      },
-      {
-        "time": 0.057,
-        "pelvis": 15.4,
-        "torso": 101.3,
-        "barrel": 76.6
-      },
-      {
-        "time": 0.061,
-        "pelvis": 11.2,
-        "torso": 94.7,
-        "barrel": 74.6
-      },
-      {
-        "time": 0.065,
-        "pelvis": 8.1,
-        "torso": 84.9,
-        "barrel": 72
-      },
-      {
-        "time": 0.069,
-        "pelvis": 5.9,
-        "torso": 72,
-        "barrel": 69.3
-      },
-      {
-        "time": 0.073,
-        "pelvis": 4.5,
-        "torso": 56.7,
-        "barrel": 66.7
-      },
-      {
-        "time": 0.077,
-        "pelvis": 3.7,
-        "torso": 45.6,
-        "barrel": 64.4
-      },
-      {
-        "time": 0.08,
-        "pelvis": 3.1,
-        "torso": 39.1,
-        "barrel": 62.4
-      },
-      {
-        "time": 0.084,
-        "pelvis": 2.5,
-        "torso": 37.4,
-        "barrel": 60.4
-      },
-      {
-        "time": 0.088,
-        "pelvis": 2.6,
-        "torso": 40.9,
-        "barrel": 58
-      },
-      {
-        "time": 0.092,
-        "pelvis": 3.3,
-        "torso": 49.5,
-        "barrel": 54.8
-      },
-      {
-        "time": 0.096,
-        "pelvis": 5,
-        "torso": 63.1,
-        "barrel": 50.3
-      },
-      {
-        "time": 0.1,
-        "pelvis": 7.7,
-        "torso": 81.1,
-        "barrel": 44
-      },
-      {
-        "time": 0.103,
-        "pelvis": 11.9,
-        "torso": 97.2,
-        "barrel": 35.6
-      },
-      {
-        "time": 0.107,
-        "pelvis": 17.8,
-        "torso": 111,
-        "barrel": 29.7
-      },
-      {
-        "time": 0.111,
-        "pelvis": 25.7,
-        "torso": 122.5,
-        "barrel": 26.8
-      },
-      {
-        "time": 0.115,
-        "pelvis": 35,
-        "torso": 131.6,
-        "barrel": 27.1
-      },
-      {
-        "time": 0.119,
-        "pelvis": 45.6,
-        "torso": 138.4,
-        "barrel": 30.8
-      },
-      {
-        "time": 0.123,
-        "pelvis": 57.3,
-        "torso": 143,
-        "barrel": 37.9
-      },
-      {
-        "time": 0.126,
-        "pelvis": 69.9,
-        "torso": 145.7,
-        "barrel": 48.7
-      },
-      {
-        "time": 0.13,
-        "pelvis": 83.1,
-        "torso": 146.5,
-        "barrel": 62.8
-      },
-      {
-        "time": 0.134,
-        "pelvis": 96.6,
-        "torso": 145.8,
-        "barrel": 75.5
-      },
-      {
-        "time": 0.138,
-        "pelvis": 110.1,
-        "torso": 143.5,
-        "barrel": 86.1
-      },
-      {
-        "time": 0.142,
-        "pelvis": 123.3,
-        "torso": 139.7,
-        "barrel": 94.2
-      },
-      {
-        "time": 0.146,
-        "pelvis": 135.7,
-        "torso": 134.7,
-        "barrel": 99.4
-      },
-      {
-        "time": 0.149,
-        "pelvis": 147.2,
-        "torso": 128.3,
-        "barrel": 101.7
-      },
-      {
-        "time": 0.153,
-        "pelvis": 157.4,
-        "torso": 120.9,
-        "barrel": 100.7
-      },
-      {
-        "time": 0.157,
-        "pelvis": 166.2,
-        "torso": 112.3,
-        "barrel": 96.5
-      },
-      {
-        "time": 0.161,
-        "pelvis": 173.2,
-        "torso": 103,
-        "barrel": 88.8
-      },
-      {
-        "time": 0.165,
-        "pelvis": 178.4,
-        "torso": 92.8,
-        "barrel": 77.6
-      },
-      {
-        "time": 0.169,
-        "pelvis": 181.6,
-        "torso": 82.2,
-        "barrel": 63
-      },
-      {
-        "time": 0.172,
-        "pelvis": 182.9,
-        "torso": 71.1,
-        "barrel": 51.3
-      },
-      {
-        "time": 0.176,
-        "pelvis": 182.1,
-        "torso": 59.7,
-        "barrel": 44.6
-      },
-      {
-        "time": 0.18,
-        "pelvis": 179.3,
-        "torso": 48.3,
-        "barrel": 43.2
-      },
-      {
-        "time": 0.184,
-        "pelvis": 174.5,
-        "torso": 36.8,
-        "barrel": 47.4
-      },
-      {
-        "time": 0.188,
-        "pelvis": 167.7,
-        "torso": 27.7,
-        "barrel": 57.1
-      },
-      {
-        "time": 0.192,
-        "pelvis": 159.2,
-        "torso": 21.5,
-        "barrel": 72.3
-      },
-      {
-        "time": 0.195,
-        "pelvis": 148.9,
-        "torso": 17.9,
-        "barrel": 92.5
-      },
-      {
-        "time": 0.199,
-        "pelvis": 137.1,
-        "torso": 16.8,
-        "barrel": 110.9
-      },
-      {
-        "time": 0.203,
-        "pelvis": 123.9,
-        "torso": 17.8,
-        "barrel": 125.2
-      },
-      {
-        "time": 0.207,
-        "pelvis": 109.6,
-        "torso": 20.6,
-        "barrel": 134.8
-      },
-      {
-        "time": 0.211,
-        "pelvis": 94.5,
-        "torso": 24.9,
-        "barrel": 139.1
-      },
-      {
-        "time": 0.215,
-        "pelvis": 78.8,
-        "torso": 28.2,
-        "barrel": 138.1
-      },
-      {
-        "time": 0.218,
-        "pelvis": 62.8,
-        "torso": 29.9,
-        "barrel": 131.8
-      },
-      {
-        "time": 0.222,
-        "pelvis": 47.1,
-        "torso": 30.2,
-        "barrel": 120.4
-      },
-      {
-        "time": 0.226,
-        "pelvis": 34.9,
-        "torso": 29.5,
-        "barrel": 104.4
-      },
-      {
-        "time": 0.23,
-        "pelvis": 26.3,
-        "torso": 28.4,
-        "barrel": 84.4
-      },
-      {
-        "time": 0.234,
-        "pelvis": 21.2,
-        "torso": 27.2,
-        "barrel": 66.9
-      },
-      {
-        "time": 0.238,
-        "pelvis": 19,
-        "torso": 26.3,
-        "barrel": 55.2
-      },
-      {
-        "time": 0.241,
-        "pelvis": 19.2,
-        "torso": 26.3,
-        "barrel": 50
-      },
-      {
-        "time": 0.245,
-        "pelvis": 21.4,
-        "torso": 27.3,
-        "barrel": 51.3
-      },
-      {
-        "time": 0.249,
-        "pelvis": 24.9,
-        "torso": 29.5,
-        "barrel": 59.3
-      },
-      {
-        "time": 0.253,
-        "pelvis": 26.2,
-        "torso": 33,
-        "barrel": 73.8
-      },
-      {
-        "time": 0.257,
-        "pelvis": 25,
-        "torso": 37.6,
-        "barrel": 94.5
-      },
-      {
-        "time": 0.261,
-        "pelvis": 21.4,
-        "torso": 43.2,
-        "barrel": 115.3
-      },
-      {
-        "time": 0.264,
-        "pelvis": 18.4,
-        "torso": 49.4,
-        "barrel": 132.9
-      },
-      {
-        "time": 0.268,
-        "pelvis": 17,
-        "torso": 55.8,
-        "barrel": 147.1
-      },
-      {
-        "time": 0.272,
-        "pelvis": 17.3,
-        "torso": 62,
-        "barrel": 157.7
-      },
-      {
-        "time": 0.276,
-        "pelvis": 19.8,
-        "torso": 67.5,
-        "barrel": 164.7
-      },
-      {
-        "time": 0.28,
-        "pelvis": 24.7,
-        "torso": 71.8,
-        "barrel": 168.1
-      },
-      {
-        "time": 0.284,
-        "pelvis": 32,
-        "torso": 74.4,
-        "barrel": 168.2
-      },
-      {
-        "time": 0.287,
-        "pelvis": 41.8,
-        "torso": 75,
-        "barrel": 165.1
-      },
-      {
-        "time": 0.291,
-        "pelvis": 51.1,
-        "torso": 73.5,
-        "barrel": 159.2
-      },
-      {
-        "time": 0.295,
-        "pelvis": 59.5,
-        "torso": 69.9,
-        "barrel": 150.6
-      },
-      {
-        "time": 0.299,
-        "pelvis": 66.8,
-        "torso": 64.6,
-        "barrel": 139.5
-      },
-      {
-        "time": 0.303,
-        "pelvis": 72.9,
+        "time": 1.873,
+        "pelvis": 83.6,
         "torso": 57.7,
-        "barrel": 126.1
+        "elbow": 65.8
       },
       {
-        "time": 0.307,
-        "pelvis": 77.9,
-        "torso": 50,
-        "barrel": 110.6
+        "time": 1.877,
+        "pelvis": 75.8,
+        "torso": 67.1,
+        "elbow": 62.6
       },
       {
-        "time": 0.31,
-        "pelvis": 81.7,
-        "torso": 42.1,
-        "barrel": 93.1
+        "time": 1.88,
+        "pelvis": 67.4,
+        "torso": 76.7,
+        "elbow": 60.8
       },
       {
-        "time": 0.314,
-        "pelvis": 84.7,
-        "torso": 34.5,
-        "barrel": 73.7
+        "time": 1.883,
+        "pelvis": 58.6,
+        "torso": 86,
+        "elbow": 60.4
       },
       {
-        "time": 0.318,
-        "pelvis": 86.9,
-        "torso": 28,
-        "barrel": 57.6
+        "time": 1.887,
+        "pelvis": 49.7,
+        "torso": 94.6,
+        "elbow": 60.8
       },
       {
-        "time": 0.322,
-        "pelvis": 88.6,
-        "torso": 23,
-        "barrel": 47.5
+        "time": 1.89,
+        "pelvis": 40.9,
+        "torso": 102,
+        "elbow": 61.4
       },
       {
-        "time": 0.326,
-        "pelvis": 90.2,
-        "torso": 20.1,
-        "barrel": 43.6
+        "time": 1.893,
+        "pelvis": 32.6,
+        "torso": 107.6,
+        "elbow": 61.3
       },
       {
-        "time": 0.33,
-        "pelvis": 91.6,
-        "torso": 19.6,
-        "barrel": 45.8
+        "time": 1.897,
+        "pelvis": 25,
+        "torso": 110.8,
+        "elbow": 60
       },
       {
-        "time": 0.333,
-        "pelvis": 93.3,
-        "torso": 21.7,
-        "barrel": 54.2
+        "time": 1.9,
+        "pelvis": 18.4,
+        "torso": 111.1,
+        "elbow": 56.8
       },
       {
-        "time": 0.337,
-        "pelvis": 95.4,
-        "torso": 26.4,
-        "barrel": 68.6
+        "time": 1.903,
+        "pelvis": 13,
+        "torso": 108.2,
+        "elbow": 51.5
       },
       {
-        "time": 0.341,
-        "pelvis": 98,
-        "torso": 33.8,
-        "barrel": 88.7
+        "time": 1.907,
+        "pelvis": 8.9,
+        "torso": 101.7,
+        "elbow": 43.9
       },
       {
-        "time": 0.345,
-        "pelvis": 101.3,
-        "torso": 43.4,
-        "barrel": 108.9
+        "time": 1.91,
+        "pelvis": 5.9,
+        "torso": 91.6,
+        "elbow": 34.3
       },
       {
-        "time": 0.349,
-        "pelvis": 105.2,
-        "torso": 54.9,
-        "barrel": 126.5
+        "time": 1.913,
+        "pelvis": 4.1,
+        "torso": 78,
+        "elbow": 22.9
       },
       {
-        "time": 0.352,
-        "pelvis": 110,
-        "torso": 67.8,
-        "barrel": 141
+        "time": 1.917,
+        "pelvis": 3.3,
+        "torso": 61.3,
+        "elbow": 10.4
       },
       {
-        "time": 0.356,
-        "pelvis": 115.4,
-        "torso": 81.2,
-        "barrel": 152.1
+        "time": 1.92,
+        "pelvis": 3,
+        "torso": 42,
+        "elbow": 2.8
       },
       {
-        "time": 0.36,
-        "pelvis": 121.5,
-        "torso": 94.7,
-        "barrel": 160
+        "time": 1.923,
+        "pelvis": 3.2,
+        "torso": 20.8,
+        "elbow": 16.2
       },
       {
-        "time": 0.364,
-        "pelvis": 128.3,
-        "torso": 107.5,
-        "barrel": 164.6
+        "time": 1.927,
+        "pelvis": 3.2,
+        "torso": 1.5,
+        "elbow": 29.4
       },
       {
-        "time": 0.368,
-        "pelvis": 135.7,
-        "torso": 119.3,
-        "barrel": 166.3
+        "time": 1.93,
+        "pelvis": 2.9,
+        "torso": 24,
+        "elbow": 42.2
       },
       {
-        "time": 0.372,
-        "pelvis": 143.7,
-        "torso": 129.8,
-        "barrel": 165.4
+        "time": 1.933,
+        "pelvis": 1.9,
+        "torso": 46,
+        "elbow": 54.5
       },
       {
-        "time": 0.375,
-        "pelvis": 152.1,
-        "torso": 139,
-        "barrel": 162
+        "time": 1.937,
+        "pelvis": 0.2,
+        "torso": 66.7,
+        "elbow": 66.4
       },
       {
-        "time": 0.379,
-        "pelvis": 161,
-        "torso": 147.2,
-        "barrel": 156.2
+        "time": 1.94,
+        "pelvis": 3.5,
+        "torso": 85.5,
+        "elbow": 77.8
       },
       {
-        "time": 0.383,
-        "pelvis": 170.3,
-        "torso": 154.8,
-        "barrel": 147.9
+        "time": 1.943,
+        "pelvis": 8.3,
+        "torso": 102.1,
+        "elbow": 89.1
       },
       {
-        "time": 0.387,
-        "pelvis": 180,
-        "torso": 162.5,
-        "barrel": 136.7
+        "time": 1.947,
+        "pelvis": 14.7,
+        "torso": 116.1,
+        "elbow": 100.3
       },
       {
-        "time": 0.391,
-        "pelvis": 190.1,
-        "torso": 170.9,
-        "barrel": 122.2
+        "time": 1.95,
+        "pelvis": 22.6,
+        "torso": 127.5,
+        "elbow": 111.8
       },
       {
-        "time": 0.395,
-        "pelvis": 200.7,
-        "torso": 180.7,
-        "barrel": 104
+        "time": 1.953,
+        "pelvis": 32.2,
+        "torso": 136.3,
+        "elbow": 123.5
       },
       {
-        "time": 0.398,
-        "pelvis": 211.6,
-        "torso": 192.5,
-        "barrel": 82.5
+        "time": 1.957,
+        "pelvis": 43.2,
+        "torso": 142.7,
+        "elbow": 135.8
       },
       {
-        "time": 0.402,
-        "pelvis": 223,
-        "torso": 206.7,
-        "barrel": 67.9
+        "time": 1.96,
+        "pelvis": 55.4,
+        "torso": 146.9,
+        "elbow": 148.6
       },
       {
-        "time": 0.406,
-        "pelvis": 234.6,
-        "torso": 223.6,
-        "barrel": 61.1
+        "time": 1.963,
+        "pelvis": 68.6,
+        "torso": 149.2,
+        "elbow": 161.8
       },
       {
-        "time": 0.41,
-        "pelvis": 246.6,
-        "torso": 243.4,
-        "barrel": 62.5
+        "time": 1.967,
+        "pelvis": 82.5,
+        "torso": 149.7,
+        "elbow": 175.1
       },
       {
-        "time": 0.414,
-        "pelvis": 259,
-        "torso": 266,
-        "barrel": 72.8
+        "time": 1.97,
+        "pelvis": 96.7,
+        "torso": 148.7,
+        "elbow": 188
       },
       {
-        "time": 0.418,
-        "pelvis": 271.7,
-        "torso": 291.4,
-        "barrel": 92.3
+        "time": 1.973,
+        "pelvis": 110.9,
+        "torso": 146.2,
+        "elbow": 199.7
       },
       {
-        "time": 0.421,
-        "pelvis": 284.8,
-        "torso": 319.3,
-        "barrel": 121.2
-      },
-      {
-        "time": 0.425,
-        "pelvis": 298.5,
-        "torso": 349.7,
-        "barrel": 159.1
-      },
-      {
-        "time": 0.429,
-        "pelvis": 312.8,
-        "torso": 382.4,
-        "barrel": 195.1
-      },
-      {
-        "time": 0.433,
-        "pelvis": 327.9,
-        "torso": 417.3,
-        "barrel": 228.2
-      },
-      {
-        "time": 0.437,
-        "pelvis": 344,
-        "torso": 454.4,
-        "barrel": 257.4
-      },
-      {
-        "time": 0.441,
-        "pelvis": 361.1,
-        "torso": 493.6,
-        "barrel": 281.8
-      },
-      {
-        "time": 0.444,
-        "pelvis": 379.6,
-        "torso": 534.9,
-        "barrel": 300.5
-      },
-      {
-        "time": 0.448,
-        "pelvis": 399.4,
-        "torso": 578.3,
-        "barrel": 312.9
-      },
-      {
-        "time": 0.452,
-        "pelvis": 420.6,
-        "torso": 623.8,
-        "barrel": 318.4
-      },
-      {
-        "time": 0.456,
-        "pelvis": 443.2,
-        "torso": 671.1,
-        "barrel": 316.8
-      },
-      {
-        "time": 0.46,
-        "pelvis": 467.1,
-        "torso": 720,
-        "barrel": 308.1
-      },
-      {
-        "time": 0.464,
-        "pelvis": 492.1,
-        "torso": 770.1,
-        "barrel": 292.8
-      },
-      {
-        "time": 0.467,
-        "pelvis": 517.8,
-        "torso": 820.8,
-        "barrel": 271.9
-      },
-      {
-        "time": 0.471,
-        "pelvis": 543.8,
-        "torso": 871.4,
-        "barrel": 246.4
-      },
-      {
-        "time": 0.475,
-        "pelvis": 569.7,
-        "torso": 921,
-        "barrel": 217.7
-      },
-      {
-        "time": 0.479,
-        "pelvis": 594.9,
-        "torso": 968.7,
-        "barrel": 187.1
-      },
-      {
-        "time": 0.483,
-        "pelvis": 618.7,
-        "torso": 1013.2,
-        "barrel": 155.7
-      },
-      {
-        "time": 0.487,
-        "pelvis": 640.6,
-        "torso": 1053.3,
-        "barrel": 124.1
-      },
-      {
-        "time": 0.49,
-        "pelvis": 659.8,
-        "torso": 1087.7,
-        "barrel": 92.7
-      },
-      {
-        "time": 0.494,
-        "pelvis": 675.9,
-        "torso": 1115.1,
-        "barrel": 70.7
-      },
-      {
-        "time": 0.498,
-        "pelvis": 688.1,
-        "torso": 1134.2,
-        "barrel": 58.6
-      },
-      {
-        "time": 0.502,
-        "pelvis": 696.1,
-        "torso": 1144.1,
-        "barrel": 56.9
-      },
-      {
-        "time": 0.506,
-        "pelvis": 699.5,
-        "torso": 1143.9,
-        "barrel": 65.8
-      },
-      {
-        "time": 0.51,
-        "pelvis": 698.2,
-        "torso": 1133.3,
-        "barrel": 85.7
-      },
-      {
-        "time": 0.513,
-        "pelvis": 692,
-        "torso": 1112.2,
-        "barrel": 116.9
-      },
-      {
-        "time": 0.517,
-        "pelvis": 681,
-        "torso": 1081.2,
-        "barrel": 159.9
-      },
-      {
-        "time": 0.521,
-        "pelvis": 665.5,
-        "torso": 1040.8,
-        "barrel": 205.7
-      },
-      {
-        "time": 0.525,
-        "pelvis": 645.7,
-        "torso": 992.4,
-        "barrel": 253.5
-      },
-      {
-        "time": 0.529,
-        "pelvis": 622.2,
-        "torso": 937.5,
-        "barrel": 302.3
-      },
-      {
-        "time": 0.533,
-        "pelvis": 595.3,
-        "torso": 877.6,
-        "barrel": 350.8
-      },
-      {
-        "time": 0.536,
-        "pelvis": 565.6,
-        "torso": 814.6,
-        "barrel": 397.4
-      },
-      {
-        "time": 0.54,
-        "pelvis": 533.6,
-        "torso": 750.3,
-        "barrel": 440.3
-      },
-      {
-        "time": 0.544,
-        "pelvis": 500,
-        "torso": 686.4,
-        "barrel": 477.3
-      },
-      {
-        "time": 0.548,
-        "pelvis": 465.3,
-        "torso": 624.6,
-        "barrel": 506.4
-      },
-      {
-        "time": 0.552,
-        "pelvis": 430,
-        "torso": 566.2,
-        "barrel": 525.7
-      },
-      {
-        "time": 0.556,
-        "pelvis": 394.7,
-        "torso": 512.4,
-        "barrel": 533.8
-      },
-      {
-        "time": 0.559,
-        "pelvis": 359.7,
-        "torso": 464.1,
-        "barrel": 530
-      },
-      {
-        "time": 0.563,
-        "pelvis": 325.7,
-        "torso": 421.8,
-        "barrel": 514.1
-      },
-      {
-        "time": 0.567,
-        "pelvis": 293,
-        "torso": 386,
-        "barrel": 487.2
-      },
-      {
-        "time": 0.571,
-        "pelvis": 262.1,
-        "torso": 356.8,
-        "barrel": 450.6
-      },
-      {
-        "time": 0.575,
-        "pelvis": 233.3,
-        "torso": 334,
-        "barrel": 406.4
-      },
-      {
-        "time": 0.579,
-        "pelvis": 207,
-        "torso": 317.4,
-        "barrel": 356.8
-      },
-      {
-        "time": 0.582,
-        "pelvis": 183.7,
-        "torso": 306.7,
-        "barrel": 304.1
-      },
-      {
-        "time": 0.586,
-        "pelvis": 163.6,
-        "torso": 301.3,
-        "barrel": 250.4
-      },
-      {
-        "time": 0.59,
-        "pelvis": 147.1,
-        "torso": 300.6,
-        "barrel": 197.5
-      },
-      {
-        "time": 0.594,
-        "pelvis": 134.4,
-        "torso": 304.1,
-        "barrel": 146.7
-      },
-      {
-        "time": 0.598,
-        "pelvis": 125.8,
-        "torso": 311.2,
-        "barrel": 107.3
-      },
-      {
-        "time": 0.602,
-        "pelvis": 121.2,
-        "torso": 321.3,
-        "barrel": 80.4
-      },
-      {
-        "time": 0.605,
-        "pelvis": 120.9,
-        "torso": 334.1,
-        "barrel": 65.3
-      },
-      {
-        "time": 0.609,
+        "time": 1.977,
         "pelvis": 124.7,
-        "torso": 349.2,
-        "barrel": 60.9
+        "torso": 142.4,
+        "elbow": 209.6
       },
       {
-        "time": 0.613,
-        "pelvis": 132.4,
-        "torso": 366.2,
-        "barrel": 66
+        "time": 1.98,
+        "pelvis": 137.8,
+        "torso": 137.2,
+        "elbow": 216.4
       },
       {
-        "time": 0.617,
-        "pelvis": 143.9,
-        "torso": 385.1,
-        "barrel": 79.5
+        "time": 1.983,
+        "pelvis": 149.9,
+        "torso": 130.8,
+        "elbow": 219.5
       },
       {
-        "time": 0.621,
-        "pelvis": 158.7,
-        "torso": 405.4,
-        "barrel": 100.1
+        "time": 1.987,
+        "pelvis": 160.6,
+        "torso": 123,
+        "elbow": 217.9
       },
       {
-        "time": 0.625,
-        "pelvis": 176.4,
-        "torso": 427.2,
-        "barrel": 118.1
+        "time": 1.99,
+        "pelvis": 169.7,
+        "torso": 114.2,
+        "elbow": 211.4
       },
       {
-        "time": 0.628,
-        "pelvis": 196.6,
-        "torso": 449.9,
-        "barrel": 131.8
+        "time": 1.993,
+        "pelvis": 177,
+        "torso": 104.4,
+        "elbow": 200
       },
       {
-        "time": 0.632,
-        "pelvis": 218.7,
-        "torso": 473.4,
-        "barrel": 140.8
+        "time": 1.997,
+        "pelvis": 182.4,
+        "torso": 93.9,
+        "elbow": 184.2
       },
       {
-        "time": 0.636,
-        "pelvis": 241.9,
-        "torso": 497.1,
-        "barrel": 145.1
+        "time": 2,
+        "pelvis": 185.8,
+        "torso": 82.9,
+        "elbow": 165
       },
       {
-        "time": 0.64,
-        "pelvis": 265.8,
-        "torso": 520.4,
-        "barrel": 144.7
+        "time": 2.003,
+        "pelvis": 187.1,
+        "torso": 71.5,
+        "elbow": 143.3
       },
       {
-        "time": 0.644,
-        "pelvis": 289.6,
-        "torso": 542.8,
-        "barrel": 139.7
+        "time": 2.007,
+        "pelvis": 186.2,
+        "torso": 59.9,
+        "elbow": 120.4
       },
       {
-        "time": 0.648,
-        "pelvis": 312.7,
-        "torso": 563.4,
-        "barrel": 130.7
+        "time": 2.01,
+        "pelvis": 183.3,
+        "torso": 48.3,
+        "elbow": 97.2
       },
       {
-        "time": 0.651,
-        "pelvis": 334.5,
-        "torso": 581.6,
-        "barrel": 118.2
+        "time": 2.013,
+        "pelvis": 178.4,
+        "torso": 36.6,
+        "elbow": 74.8
       },
       {
-        "time": 0.655,
-        "pelvis": 354.5,
-        "torso": 596.9,
-        "barrel": 103.3
+        "time": 2.017,
+        "pelvis": 171.4,
+        "torso": 25,
+        "elbow": 53.7
       },
       {
-        "time": 0.659,
-        "pelvis": 372.2,
-        "torso": 608.9,
-        "barrel": 87.2
+        "time": 2.02,
+        "pelvis": 162.7,
+        "torso": 13.6,
+        "elbow": 34.3
       },
       {
-        "time": 0.663,
-        "pelvis": 387.4,
-        "torso": 617.3,
-        "barrel": 71.1
+        "time": 2.023,
+        "pelvis": 152.1,
+        "torso": 2.7,
+        "elbow": 16.7
       },
       {
-        "time": 0.667,
-        "pelvis": 399.6,
-        "torso": 622,
-        "barrel": 56.3
+        "time": 2.027,
+        "pelvis": 140,
+        "torso": 7.5,
+        "elbow": 0.9
       },
       {
-        "time": 0.67,
-        "pelvis": 408.9,
-        "torso": 623.3,
-        "barrel": 44
+        "time": 2.03,
+        "pelvis": 126.4,
+        "torso": 16.4,
+        "elbow": 13.3
       },
       {
-        "time": 0.674,
-        "pelvis": 415.1,
-        "torso": 621.3,
-        "barrel": 35.1
+        "time": 2.033,
+        "pelvis": 111.5,
+        "torso": 23.7,
+        "elbow": 26.2
       },
       {
-        "time": 0.678,
-        "pelvis": 418.3,
-        "torso": 616.6,
-        "barrel": 30.1
+        "time": 2.037,
+        "pelvis": 95.7,
+        "torso": 28.9,
+        "elbow": 37.8
       },
       {
-        "time": 0.682,
-        "pelvis": 418.7,
-        "torso": 609.5,
-        "barrel": 29.2
+        "time": 2.04,
+        "pelvis": 79.3,
+        "torso": 32,
+        "elbow": 48.4
       },
       {
-        "time": 0.686,
-        "pelvis": 416.4,
-        "torso": 600.6,
-        "barrel": 32.3
+        "time": 2.043,
+        "pelvis": 62.5,
+        "torso": 33.1,
+        "elbow": 58.2
       },
       {
-        "time": 0.69,
-        "pelvis": 411.8,
-        "torso": 590.3,
-        "barrel": 38.7
+        "time": 2.047,
+        "pelvis": 45.9,
+        "torso": 32.4,
+        "elbow": 67.3
       },
       {
-        "time": 0.693,
-        "pelvis": 405.1,
-        "torso": 579.2,
-        "barrel": 47.7
+        "time": 2.05,
+        "pelvis": 29.9,
+        "torso": 30.6,
+        "elbow": 75.8
       },
       {
-        "time": 0.697,
-        "pelvis": 396.5,
-        "torso": 567.5,
-        "barrel": 58
+        "time": 2.053,
+        "pelvis": 14.9,
+        "torso": 28.3,
+        "elbow": 83.7
       },
       {
-        "time": 0.701,
-        "pelvis": 386.4,
-        "torso": 555.7,
-        "barrel": 68.3
+        "time": 2.057,
+        "pelvis": 1.3,
+        "torso": 26,
+        "elbow": 91.1
       },
       {
-        "time": 0.705,
-        "pelvis": 375,
-        "torso": 544.2,
-        "barrel": 77.2
+        "time": 2.06,
+        "pelvis": 10.3,
+        "torso": 24.4,
+        "elbow": 97.9
       },
       {
-        "time": 0.709,
-        "pelvis": 362.5,
-        "torso": 533.1,
-        "barrel": 83
+        "time": 2.063,
+        "pelvis": 19.6,
+        "torso": 23.8,
+        "elbow": 104.1
       },
       {
-        "time": 0.713,
-        "pelvis": 349,
-        "torso": 522.7,
-        "barrel": 84.5
+        "time": 2.067,
+        "pelvis": 26.4,
+        "torso": 24.6,
+        "elbow": 109.7
       },
       {
-        "time": 0.716,
-        "pelvis": 334.8,
-        "torso": 513.2,
-        "barrel": 80.2
+        "time": 2.07,
+        "pelvis": 30.4,
+        "torso": 26.7,
+        "elbow": 114.7
       },
       {
-        "time": 0.72,
-        "pelvis": 319.9,
-        "torso": 504.5,
-        "barrel": 69.4
+        "time": 2.073,
+        "pelvis": 31.6,
+        "torso": 30.4,
+        "elbow": 119.2
       },
       {
-        "time": 0.724,
-        "pelvis": 304.5,
-        "torso": 496.8,
-        "barrel": 60.9
+        "time": 2.077,
+        "pelvis": 30.1,
+        "torso": 35.4,
+        "elbow": 123.1
       },
       {
-        "time": 0.728,
-        "pelvis": 288.8,
-        "torso": 489.7,
-        "barrel": 57.8
+        "time": 2.08,
+        "pelvis": 25.9,
+        "torso": 41.5,
+        "elbow": 126.6
       },
       {
-        "time": 0.732,
-        "pelvis": 273,
-        "torso": 483,
-        "barrel": 61.2
+        "time": 2.083,
+        "pelvis": 19.4,
+        "torso": 48.6,
+        "elbow": 129.7
       },
       {
-        "time": 0.736,
-        "pelvis": 257.4,
-        "torso": 476.6,
-        "barrel": 71.8
+        "time": 2.087,
+        "pelvis": 11,
+        "torso": 56.1,
+        "elbow": 132.4
       },
       {
-        "time": 0.739,
-        "pelvis": 242.3,
-        "torso": 470.1,
-        "barrel": 90.4
+        "time": 2.09,
+        "pelvis": 1,
+        "torso": 63.5,
+        "elbow": 135
       },
       {
-        "time": 0.743,
-        "pelvis": 228.1,
-        "torso": 463.5,
-        "barrel": 117.3
+        "time": 2.093,
+        "pelvis": 9.9,
+        "torso": 70.2,
+        "elbow": 137.3
       },
       {
-        "time": 0.747,
-        "pelvis": 215.2,
-        "torso": 456.6,
-        "barrel": 152.9
+        "time": 2.097,
+        "pelvis": 21.3,
+        "torso": 75.5,
+        "elbow": 139.7
       },
       {
-        "time": 0.751,
-        "pelvis": 204.1,
-        "torso": 449.7,
-        "barrel": 187.6
+        "time": 2.1,
+        "pelvis": 32.7,
+        "torso": 78.9,
+        "elbow": 142
       },
       {
-        "time": 0.755,
-        "pelvis": 195.2,
-        "torso": 442.9,
-        "barrel": 217.9
+        "time": 2.103,
+        "pelvis": 43.5,
+        "torso": 79.9,
+        "elbow": 144.5
       },
       {
-        "time": 0.759,
-        "pelvis": 188.9,
-        "torso": 436.8,
-        "barrel": 242.6
+        "time": 2.107,
+        "pelvis": 53.4,
+        "torso": 78.4,
+        "elbow": 147.2
       },
       {
-        "time": 0.762,
-        "pelvis": 185.5,
-        "torso": 431.6,
-        "barrel": 260.8
+        "time": 2.11,
+        "pelvis": 62.1,
+        "torso": 74.2,
+        "elbow": 150.2
       },
       {
-        "time": 0.766,
-        "pelvis": 185.4,
-        "torso": 427.8,
-        "barrel": 272
+        "time": 2.113,
+        "pelvis": 69.5,
+        "torso": 67.8,
+        "elbow": 153.5
       },
       {
-        "time": 0.77,
-        "pelvis": 188.7,
-        "torso": 425.6,
-        "barrel": 275.7
+        "time": 2.117,
+        "pelvis": 75.5,
+        "torso": 59.7,
+        "elbow": 156.9
       },
       {
-        "time": 0.774,
-        "pelvis": 195.5,
-        "torso": 424.9,
-        "barrel": 271.8
-      },
-      {
-        "time": 0.778,
-        "pelvis": 205.7,
-        "torso": 425.6,
-        "barrel": 260.6
-      },
-      {
-        "time": 0.782,
-        "pelvis": 219.3,
-        "torso": 427.2,
-        "barrel": 242.6
-      },
-      {
-        "time": 0.785,
-        "pelvis": 236.2,
-        "torso": 428.9,
-        "barrel": 218.6
-      },
-      {
-        "time": 0.789,
-        "pelvis": 255.9,
-        "torso": 429.9,
-        "barrel": 189.8
-      },
-      {
-        "time": 0.793,
-        "pelvis": 278.4,
-        "torso": 429.2,
-        "barrel": 157.4
-      },
-      {
-        "time": 0.797,
-        "pelvis": 303.3,
-        "torso": 425.9,
-        "barrel": 122.8
-      },
-      {
-        "time": 0.801,
-        "pelvis": 330.3,
-        "torso": 419.4,
-        "barrel": 92.7
-      },
-      {
-        "time": 0.805,
-        "pelvis": 359.3,
-        "torso": 409.3,
-        "barrel": 71.1
-      },
-      {
-        "time": 0.808,
-        "pelvis": 389.8,
-        "torso": 395.5,
-        "barrel": 58.1
-      },
-      {
-        "time": 0.812,
-        "pelvis": 421.6,
-        "torso": 378.3,
-        "barrel": 53.3
-      },
-      {
-        "time": 0.816,
-        "pelvis": 454.3,
-        "torso": 358.4,
-        "barrel": 55.9
-      },
-      {
-        "time": 0.82,
-        "pelvis": 487.7,
-        "torso": 336.7,
-        "barrel": 65.3
-      },
-      {
-        "time": 0.824,
-        "pelvis": 521.1,
-        "torso": 314.1,
-        "barrel": 80.4
-      },
-      {
-        "time": 0.828,
-        "pelvis": 554.1,
-        "torso": 291.8,
-        "barrel": 94.9
-      },
-      {
-        "time": 0.831,
-        "pelvis": 586,
-        "torso": 270.8,
-        "barrel": 104.8
-      },
-      {
-        "time": 0.835,
-        "pelvis": 616.1,
-        "torso": 251.8,
-        "barrel": 109.9
-      },
-      {
-        "time": 0.839,
-        "pelvis": 643.4,
-        "torso": 235.4,
-        "barrel": 110.4
-      },
-      {
-        "time": 0.843,
-        "pelvis": 667.3,
-        "torso": 221.9,
-        "barrel": 106.4
-      },
-      {
-        "time": 0.847,
-        "pelvis": 686.5,
-        "torso": 211,
-        "barrel": 98.2
-      },
-      {
-        "time": 0.851,
-        "pelvis": 700.3,
-        "torso": 202.5,
-        "barrel": 86.2
-      },
-      {
-        "time": 0.854,
-        "pelvis": 707.6,
-        "torso": 195.3,
-        "barrel": 71.2
-      },
-      {
-        "time": 0.858,
-        "pelvis": 707.8,
-        "torso": 188.6,
-        "barrel": 55.5
-      },
-      {
-        "time": 0.862,
-        "pelvis": 700,
-        "torso": 180.9,
-        "barrel": 43.6
-      },
-      {
-        "time": 0.866,
-        "pelvis": 683.7,
-        "torso": 170.9,
-        "barrel": 35.7
-      },
-      {
-        "time": 0.87,
-        "pelvis": 658.8,
-        "torso": 157.1,
-        "barrel": 31.5
-      },
-      {
-        "time": 0.874,
-        "pelvis": 625.2,
-        "torso": 138.3,
-        "barrel": 30.8
-      },
-      {
-        "time": 0.877,
-        "pelvis": 583,
-        "torso": 113.3,
-        "barrel": 33.3
-      },
-      {
-        "time": 0.881,
-        "pelvis": 532.9,
-        "torso": 94.1,
-        "barrel": 38.3
-      },
-      {
-        "time": 0.885,
-        "pelvis": 475.5,
-        "torso": 85,
-        "barrel": 43.7
-      },
-      {
-        "time": 0.889,
-        "pelvis": 411.9,
-        "torso": 87.5,
-        "barrel": 45.3
-      },
-      {
-        "time": 0.893,
-        "pelvis": 343.3,
-        "torso": 102.5,
-        "barrel": 43.4
-      },
-      {
-        "time": 0.897,
-        "pelvis": 271.2,
-        "torso": 130.9,
-        "barrel": 38.6
-      },
-      {
-        "time": 0.9,
-        "pelvis": 205.6,
-        "torso": 172.9,
-        "barrel": 31.6
-      },
-      {
-        "time": 0.904,
-        "pelvis": 159,
-        "torso": 228.7,
-        "barrel": 24.8
-      },
-      {
-        "time": 0.908,
-        "pelvis": 131.4,
-        "torso": 285,
-        "barrel": 19.6
-      },
-      {
-        "time": 0.912,
-        "pelvis": 122.1,
-        "torso": 336.3,
-        "barrel": 16.2
-      },
-      {
-        "time": 0.916,
-        "pelvis": 130.2,
-        "torso": 380.1,
-        "barrel": 14.9
-      },
-      {
-        "time": 0.92,
-        "pelvis": 154.4,
-        "torso": 414.6,
-        "barrel": 15.6
-      },
-      {
-        "time": 0.923,
-        "pelvis": 193.3,
-        "torso": 438.5,
-        "barrel": 18.4
-      },
-      {
-        "time": 0.927,
-        "pelvis": 236.6,
-        "torso": 451,
-        "barrel": 22.9
-      },
-      {
-        "time": 0.931,
-        "pelvis": 271.4,
-        "torso": 452,
-        "barrel": 27.3
-      },
-      {
-        "time": 0.935,
-        "pelvis": 297.6,
-        "torso": 442.1,
-        "barrel": 30.5
-      },
-      {
-        "time": 0.939,
-        "pelvis": 315.4,
-        "torso": 422.5,
-        "barrel": 32.4
-      },
-      {
-        "time": 0.943,
-        "pelvis": 325.2,
-        "torso": 394.5,
-        "barrel": 32.9
-      },
-      {
-        "time": 0.946,
-        "pelvis": 327.5,
-        "torso": 360,
-        "barrel": 31.8
-      },
-      {
-        "time": 0.95,
-        "pelvis": 323.2,
-        "torso": 320.8,
-        "barrel": 28.9
-      },
-      {
-        "time": 0.954,
-        "pelvis": 313.1,
-        "torso": 278.7,
-        "barrel": 24.4
-      },
-      {
-        "time": 0.958,
-        "pelvis": 298.3,
-        "torso": 235.8,
-        "barrel": 20.3
-      },
-      {
-        "time": 0.962,
-        "pelvis": 279.7,
-        "torso": 193.6,
-        "barrel": 18.1
-      },
-      {
-        "time": 0.966,
-        "pelvis": 258.3,
-        "torso": 153.6,
-        "barrel": 18
-      },
-      {
-        "time": 0.969,
-        "pelvis": 235,
-        "torso": 117,
-        "barrel": 20.2
-      },
-      {
-        "time": 0.973,
-        "pelvis": 210.7,
-        "torso": 84.9,
-        "barrel": 25.1
-      },
-      {
-        "time": 0.977,
-        "pelvis": 186.1,
-        "torso": 58.3,
-        "barrel": 32.6
-      },
-      {
-        "time": 0.981,
-        "pelvis": 162,
-        "torso": 38.6,
-        "barrel": 43
-      },
-      {
-        "time": 0.985,
-        "pelvis": 138.9,
-        "torso": 24.5,
-        "barrel": 53.7
-      },
-      {
-        "time": 0.989,
-        "pelvis": 117.3,
-        "torso": 15,
-        "barrel": 63.6
-      },
-      {
-        "time": 0.992,
-        "pelvis": 97.6,
-        "torso": 9,
-        "barrel": 72.4
-      },
-      {
-        "time": 0.996,
+        "time": 2.12,
         "pelvis": 80.2,
-        "torso": 5.6,
-        "barrel": 79.6
+        "torso": 50.6,
+        "elbow": 160.1
       },
       {
-        "time": 1,
-        "pelvis": 65.2,
-        "torso": 5.2,
-        "barrel": 85.1
+        "time": 2.123,
+        "pelvis": 83.7,
+        "torso": 41.2,
+        "elbow": 162.3
+      },
+      {
+        "time": 2.127,
+        "pelvis": 86.1,
+        "torso": 32.3,
+        "elbow": 162.9
+      },
+      {
+        "time": 2.13,
+        "pelvis": 87.9,
+        "torso": 24.5,
+        "elbow": 160.9
+      },
+      {
+        "time": 2.133,
+        "pelvis": 89.1,
+        "torso": 18.6,
+        "elbow": 155.7
+      },
+      {
+        "time": 2.137,
+        "pelvis": 90.1,
+        "torso": 14.9,
+        "elbow": 146.9
+      },
+      {
+        "time": 2.14,
+        "pelvis": 91.2,
+        "torso": 13.9,
+        "elbow": 134.2
+      },
+      {
+        "time": 2.143,
+        "pelvis": 92.5,
+        "torso": 15.8,
+        "elbow": 117.9
+      },
+      {
+        "time": 2.147,
+        "pelvis": 94.2,
+        "torso": 20.7,
+        "elbow": 98.5
+      },
+      {
+        "time": 2.15,
+        "pelvis": 96.6,
+        "torso": 28.6,
+        "elbow": 76.4
+      },
+      {
+        "time": 2.153,
+        "pelvis": 99.7,
+        "torso": 39.2,
+        "elbow": 52.1
+      },
+      {
+        "time": 2.157,
+        "pelvis": 103.6,
+        "torso": 52,
+        "elbow": 26.1
+      },
+      {
+        "time": 2.16,
+        "pelvis": 108.4,
+        "torso": 66.3,
+        "elbow": 1.7
+      },
+      {
+        "time": 2.163,
+        "pelvis": 113.9,
+        "torso": 81.4,
+        "elbow": 31.2
+      },
+      {
+        "time": 2.167,
+        "pelvis": 120.2,
+        "torso": 96.4,
+        "elbow": 62.6
+      },
+      {
+        "time": 2.17,
+        "pelvis": 127.2,
+        "torso": 110.4,
+        "elbow": 96
+      },
+      {
+        "time": 2.173,
+        "pelvis": 134.7,
+        "torso": 122.8,
+        "elbow": 131.5
+      },
+      {
+        "time": 2.177,
+        "pelvis": 142.7,
+        "torso": 133.3,
+        "elbow": 168.7
+      },
+      {
+        "time": 2.18,
+        "pelvis": 151.2,
+        "torso": 141.8,
+        "elbow": 207.2
+      },
+      {
+        "time": 2.183,
+        "pelvis": 160.1,
+        "torso": 148.9,
+        "elbow": 246
+      },
+      {
+        "time": 2.187,
+        "pelvis": 169.4,
+        "torso": 154.9,
+        "elbow": 284.5
+      },
+      {
+        "time": 2.19,
+        "pelvis": 179.2,
+        "torso": 160.9,
+        "elbow": 321.7
+      },
+      {
+        "time": 2.193,
+        "pelvis": 189.3,
+        "torso": 167.7,
+        "elbow": 356.9
+      },
+      {
+        "time": 2.197,
+        "pelvis": 199.9,
+        "torso": 176.2,
+        "elbow": 390
+      },
+      {
+        "time": 2.2,
+        "pelvis": 210.9,
+        "torso": 187,
+        "elbow": 420.5
+      },
+      {
+        "time": 2.203,
+        "pelvis": 222.3,
+        "torso": 200.7,
+        "elbow": 448.8
+      },
+      {
+        "time": 2.207,
+        "pelvis": 234,
+        "torso": 217.4,
+        "elbow": 474.8
+      },
+      {
+        "time": 2.21,
+        "pelvis": 246,
+        "torso": 237.4,
+        "elbow": 498.9
+      },
+      {
+        "time": 2.213,
+        "pelvis": 258.3,
+        "torso": 260.4,
+        "elbow": 521.1
+      },
+      {
+        "time": 2.217,
+        "pelvis": 271,
+        "torso": 286.2,
+        "elbow": 541.3
+      },
+      {
+        "time": 2.22,
+        "pelvis": 283.9,
+        "torso": 314.6,
+        "elbow": 559.4
+      },
+      {
+        "time": 2.223,
+        "pelvis": 297.3,
+        "torso": 345.3,
+        "elbow": 574.8
+      },
+      {
+        "time": 2.227,
+        "pelvis": 311.3,
+        "torso": 378.2,
+        "elbow": 587
+      },
+      {
+        "time": 2.23,
+        "pelvis": 326,
+        "torso": 413.2,
+        "elbow": 595.1
+      },
+      {
+        "time": 2.233,
+        "pelvis": 341.7,
+        "torso": 450.2,
+        "elbow": 598.2
+      },
+      {
+        "time": 2.237,
+        "pelvis": 358.5,
+        "torso": 489.3,
+        "elbow": 595.4
+      },
+      {
+        "time": 2.24,
+        "pelvis": 376.6,
+        "torso": 530.5,
+        "elbow": 586.1
+      },
+      {
+        "time": 2.243,
+        "pelvis": 396.3,
+        "torso": 574,
+        "elbow": 570
+      },
+      {
+        "time": 2.247,
+        "pelvis": 417.5,
+        "torso": 619.7,
+        "elbow": 547.1
+      },
+      {
+        "time": 2.25,
+        "pelvis": 440.4,
+        "torso": 667.5,
+        "elbow": 517.9
+      },
+      {
+        "time": 2.253,
+        "pelvis": 464.7,
+        "torso": 717.2,
+        "elbow": 483.6
+      },
+      {
+        "time": 2.257,
+        "pelvis": 490.3,
+        "torso": 768.3,
+        "elbow": 445.6
+      },
+      {
+        "time": 2.26,
+        "pelvis": 516.8,
+        "torso": 820.4,
+        "elbow": 405.6
+      },
+      {
+        "time": 2.263,
+        "pelvis": 543.9,
+        "torso": 872.8,
+        "elbow": 365.8
+      },
+      {
+        "time": 2.267,
+        "pelvis": 570.9,
+        "torso": 924.5,
+        "elbow": 328.3
+      },
+      {
+        "time": 2.27,
+        "pelvis": 597.4,
+        "torso": 974.6,
+        "elbow": 295.5
+      },
+      {
+        "time": 2.273,
+        "pelvis": 622.7,
+        "torso": 1021.8,
+        "elbow": 269.9
+      },
+      {
+        "time": 2.277,
+        "pelvis": 645.9,
+        "torso": 1064.7,
+        "elbow": 253.9
+      },
+      {
+        "time": 2.28,
+        "pelvis": 666.5,
+        "torso": 1102,
+        "elbow": 249.5
+      },
+      {
+        "time": 2.283,
+        "pelvis": 683.7,
+        "torso": 1132.1,
+        "elbow": 258.7
+      },
+      {
+        "time": 2.287,
+        "pelvis": 697,
+        "torso": 1153.6,
+        "elbow": 282.4
+      },
+      {
+        "time": 2.29,
+        "pelvis": 705.7,
+        "torso": 1165.3,
+        "elbow": 321.1
+      },
+      {
+        "time": 2.293,
+        "pelvis": 709.5,
+        "torso": 1166.1,
+        "elbow": 374.1
+      },
+      {
+        "time": 2.297,
+        "pelvis": 708.3,
+        "torso": 1155.6,
+        "elbow": 439.9
+      },
+      {
+        "time": 2.3,
+        "pelvis": 701.9,
+        "torso": 1133.7,
+        "elbow": 516.1
+      },
+      {
+        "time": 2.303,
+        "pelvis": 690.5,
+        "torso": 1100.8,
+        "elbow": 599.7
+      },
+      {
+        "time": 2.307,
+        "pelvis": 674.3,
+        "torso": 1057.9,
+        "elbow": 687.4
+      },
+      {
+        "time": 2.31,
+        "pelvis": 653.6,
+        "torso": 1006.3,
+        "elbow": 775.7
+      },
+      {
+        "time": 2.313,
+        "pelvis": 629,
+        "torso": 947.6,
+        "elbow": 861.3
+      },
+      {
+        "time": 2.317,
+        "pelvis": 600.9,
+        "torso": 883.8,
+        "elbow": 941.5
+      },
+      {
+        "time": 2.32,
+        "pelvis": 570,
+        "torso": 816.9,
+        "elbow": 1013.5
+      },
+      {
+        "time": 2.323,
+        "pelvis": 536.9,
+        "torso": 748.9,
+        "elbow": 1075.3
+      },
+      {
+        "time": 2.327,
+        "pelvis": 502.2,
+        "torso": 681.6,
+        "elbow": 1125.3
+      },
+      {
+        "time": 2.33,
+        "pelvis": 466.4,
+        "torso": 616.9,
+        "elbow": 1162.1
+      },
+      {
+        "time": 2.333,
+        "pelvis": 430,
+        "torso": 556.2,
+        "elbow": 1184.7
+      },
+      {
+        "time": 2.337,
+        "pelvis": 393.7,
+        "torso": 500.6,
+        "elbow": 1192.4
+      },
+      {
+        "time": 2.34,
+        "pelvis": 357.9,
+        "torso": 451.1,
+        "elbow": 1185.1
+      },
+      {
+        "time": 2.343,
+        "pelvis": 323,
+        "torso": 408.2,
+        "elbow": 1162.9
+      },
+      {
+        "time": 2.347,
+        "pelvis": 289.5,
+        "torso": 372.2,
+        "elbow": 1126.2
+      },
+      {
+        "time": 2.35,
+        "pelvis": 257.7,
+        "torso": 343.3,
+        "elbow": 1076
+      },
+      {
+        "time": 2.353,
+        "pelvis": 228.1,
+        "torso": 321.1,
+        "elbow": 1013.8
+      },
+      {
+        "time": 2.357,
+        "pelvis": 201.1,
+        "torso": 305.5,
+        "elbow": 941.2
+      },
+      {
+        "time": 2.36,
+        "pelvis": 177.1,
+        "torso": 295.9,
+        "elbow": 860.3
+      },
+      {
+        "time": 2.363,
+        "pelvis": 156.4,
+        "torso": 291.7,
+        "elbow": 773.4
+      },
+      {
+        "time": 2.367,
+        "pelvis": 139.3,
+        "torso": 292.4,
+        "elbow": 682.9
+      },
+      {
+        "time": 2.37,
+        "pelvis": 126.2,
+        "torso": 297.1,
+        "elbow": 591.3
+      },
+      {
+        "time": 2.373,
+        "pelvis": 117.2,
+        "torso": 305.3,
+        "elbow": 500.7
+      },
+      {
+        "time": 2.377,
+        "pelvis": 112.6,
+        "torso": 316.4,
+        "elbow": 413.3
+      },
+      {
+        "time": 2.38,
+        "pelvis": 112.3,
+        "torso": 329.9,
+        "elbow": 330.6
+      },
+      {
+        "time": 2.383,
+        "pelvis": 116.4,
+        "torso": 345.5,
+        "elbow": 253.9
+      },
+      {
+        "time": 2.387,
+        "pelvis": 124.7,
+        "torso": 362.8,
+        "elbow": 184.2
+      },
+      {
+        "time": 2.39,
+        "pelvis": 136.8,
+        "torso": 381.9,
+        "elbow": 122.1
+      },
+      {
+        "time": 2.393,
+        "pelvis": 152.6,
+        "torso": 402.6,
+        "elbow": 67.9
+      },
+      {
+        "time": 2.397,
+        "pelvis": 171.4,
+        "torso": 424.7,
+        "elbow": 21.7
+      },
+      {
+        "time": 2.4,
+        "pelvis": 192.8,
+        "torso": 448.1,
+        "elbow": 16.8
+      },
+      {
+        "time": 2.403,
+        "pelvis": 216.1,
+        "torso": 472.6,
+        "elbow": 47.8
+      },
+      {
+        "time": 2.407,
+        "pelvis": 240.7,
+        "torso": 497.5,
+        "elbow": 71.8
+      },
+      {
+        "time": 2.41,
+        "pelvis": 265.9,
+        "torso": 522.3,
+        "elbow": 89.4
+      },
+      {
+        "time": 2.413,
+        "pelvis": 291.1,
+        "torso": 546.2,
+        "elbow": 101.3
+      },
+      {
+        "time": 2.417,
+        "pelvis": 315.4,
+        "torso": 568.4,
+        "elbow": 108
+      },
+      {
+        "time": 2.42,
+        "pelvis": 338.4,
+        "torso": 588,
+        "elbow": 110.4
+      },
+      {
+        "time": 2.423,
+        "pelvis": 359.3,
+        "torso": 604.3,
+        "elbow": 109
+      },
+      {
+        "time": 2.427,
+        "pelvis": 377.8,
+        "torso": 616.8,
+        "elbow": 104.8
+      },
+      {
+        "time": 2.43,
+        "pelvis": 393.4,
+        "torso": 625.2,
+        "elbow": 98.5
+      },
+      {
+        "time": 2.433,
+        "pelvis": 406,
+        "torso": 629.5,
+        "elbow": 90.9
+      },
+      {
+        "time": 2.437,
+        "pelvis": 415.3,
+        "torso": 630,
+        "elbow": 82.7
+      },
+      {
+        "time": 2.44,
+        "pelvis": 421.3,
+        "torso": 627,
+        "elbow": 74.6
+      },
+      {
+        "time": 2.443,
+        "pelvis": 424.2,
+        "torso": 621.2,
+        "elbow": 67
+      },
+      {
+        "time": 2.447,
+        "pelvis": 424,
+        "torso": 613,
+        "elbow": 60
+      },
+      {
+        "time": 2.45,
+        "pelvis": 421.2,
+        "torso": 603.2,
+        "elbow": 53.7
+      },
+      {
+        "time": 2.453,
+        "pelvis": 416,
+        "torso": 592,
+        "elbow": 47.6
+      },
+      {
+        "time": 2.457,
+        "pelvis": 408.6,
+        "torso": 580.1,
+        "elbow": 41.4
+      },
+      {
+        "time": 2.46,
+        "pelvis": 399.5,
+        "torso": 567.7,
+        "elbow": 34.8
+      },
+      {
+        "time": 2.463,
+        "pelvis": 388.9,
+        "torso": 555.2,
+        "elbow": 27.7
+      },
+      {
+        "time": 2.467,
+        "pelvis": 377.1,
+        "torso": 543.1,
+        "elbow": 20.2
+      },
+      {
+        "time": 2.47,
+        "pelvis": 364.3,
+        "torso": 531.4,
+        "elbow": 13.1
+      },
+      {
+        "time": 2.473,
+        "pelvis": 350.6,
+        "torso": 520.7,
+        "elbow": 7
+      },
+      {
+        "time": 2.477,
+        "pelvis": 336.1,
+        "torso": 511,
+        "elbow": 3.2
+      },
+      {
+        "time": 2.48,
+        "pelvis": 320.9,
+        "torso": 502.4,
+        "elbow": 2.4
+      },
+      {
+        "time": 2.483,
+        "pelvis": 305.2,
+        "torso": 495,
+        "elbow": 5.4
+      },
+      {
+        "time": 2.487,
+        "pelvis": 289.1,
+        "torso": 488.5,
+        "elbow": 12.4
+      },
+      {
+        "time": 2.49,
+        "pelvis": 272.8,
+        "torso": 482.7,
+        "elbow": 22.9
+      },
+      {
+        "time": 2.493,
+        "pelvis": 256.5,
+        "torso": 477,
+        "elbow": 36.3
+      },
+      {
+        "time": 2.497,
+        "pelvis": 240.6,
+        "torso": 471.1,
+        "elbow": 51.5
+      },
+      {
+        "time": 2.5,
+        "pelvis": 225.5,
+        "torso": 464.6,
+        "elbow": 67.2
+      },
+      {
+        "time": 2.503,
+        "pelvis": 211.7,
+        "torso": 457.4,
+        "elbow": 82.1
+      },
+      {
+        "time": 2.507,
+        "pelvis": 199.6,
+        "torso": 449.7,
+        "elbow": 94.7
+      },
+      {
+        "time": 2.51,
+        "pelvis": 189.8,
+        "torso": 441.9,
+        "elbow": 104.1
+      },
+      {
+        "time": 2.513,
+        "pelvis": 182.7,
+        "torso": 434.6,
+        "elbow": 109.6
+      },
+      {
+        "time": 2.517,
+        "pelvis": 178.7,
+        "torso": 428.4,
+        "elbow": 110.8
+      },
+      {
+        "time": 2.52,
+        "pelvis": 178.3,
+        "torso": 423.9,
+        "elbow": 108.1
+      },
+      {
+        "time": 2.523,
+        "pelvis": 181.4,
+        "torso": 421.5,
+        "elbow": 102.2
+      },
+      {
+        "time": 2.527,
+        "pelvis": 188.3,
+        "torso": 421.3,
+        "elbow": 94
+      },
+      {
+        "time": 2.53,
+        "pelvis": 198.8,
+        "torso": 423,
+        "elbow": 84.6
+      },
+      {
+        "time": 2.533,
+        "pelvis": 212.8,
+        "torso": 426.3,
+        "elbow": 75.3
+      },
+      {
+        "time": 2.537,
+        "pelvis": 230.1,
+        "torso": 430.1,
+        "elbow": 67.1
+      },
+      {
+        "time": 2.54,
+        "pelvis": 250.5,
+        "torso": 433.4,
+        "elbow": 61.1
+      },
+      {
+        "time": 2.543,
+        "pelvis": 273.5,
+        "torso": 434.9,
+        "elbow": 58.5
+      },
+      {
+        "time": 2.547,
+        "pelvis": 299,
+        "torso": 433.5,
+        "elbow": 59.9
+      },
+      {
+        "time": 2.55,
+        "pelvis": 326.6,
+        "torso": 428,
+        "elbow": 66.2
+      },
+      {
+        "time": 2.553,
+        "pelvis": 356.1,
+        "torso": 418,
+        "elbow": 77.6
+      },
+      {
+        "time": 2.557,
+        "pelvis": 387.1,
+        "torso": 403.4,
+        "elbow": 94.3
+      },
+      {
+        "time": 2.56,
+        "pelvis": 419.5,
+        "torso": 384.6,
+        "elbow": 116
+      },
+      {
+        "time": 2.563,
+        "pelvis": 453,
+        "torso": 362.5,
+        "elbow": 142.3
+      },
+      {
+        "time": 2.567,
+        "pelvis": 487.1,
+        "torso": 338.3,
+        "elbow": 172.5
+      },
+      {
+        "time": 2.57,
+        "pelvis": 521.6,
+        "torso": 313.3,
+        "elbow": 205.7
+      },
+      {
+        "time": 2.573,
+        "pelvis": 555.9,
+        "torso": 288.7,
+        "elbow": 241.2
+      },
+      {
+        "time": 2.577,
+        "pelvis": 589.3,
+        "torso": 265.8,
+        "elbow": 278.1
+      },
+      {
+        "time": 2.58,
+        "pelvis": 621.1,
+        "torso": 245.5,
+        "elbow": 315.9
+      },
+      {
+        "time": 2.583,
+        "pelvis": 650.5,
+        "torso": 228.6,
+        "elbow": 353.9
+      },
+      {
+        "time": 2.587,
+        "pelvis": 676.3,
+        "torso": 215.3,
+        "elbow": 391.4
+      },
+      {
+        "time": 2.59,
+        "pelvis": 697.6,
+        "torso": 205.4,
+        "elbow": 427.9
+      },
+      {
+        "time": 2.593,
+        "pelvis": 713.4,
+        "torso": 198.6,
+        "elbow": 462.6
+      },
+      {
+        "time": 2.597,
+        "pelvis": 722.5,
+        "torso": 193.9,
+        "elbow": 494.7
+      },
+      {
+        "time": 2.6,
+        "pelvis": 724.2,
+        "torso": 190,
+        "elbow": 523.4
+      },
+      {
+        "time": 2.603,
+        "pelvis": 717.5,
+        "torso": 185.5,
+        "elbow": 547.7
+      },
+      {
+        "time": 2.607,
+        "pelvis": 701.9,
+        "torso": 178.7,
+        "elbow": 566.7
+      },
+      {
+        "time": 2.61,
+        "pelvis": 677.1,
+        "torso": 168,
+        "elbow": 579.6
+      },
+      {
+        "time": 2.613,
+        "pelvis": 643.1,
+        "torso": 151.7,
+        "elbow": 585.5
+      },
+      {
+        "time": 2.617,
+        "pelvis": 599.9,
+        "torso": 128.5,
+        "elbow": 583.9
+      },
+      {
+        "time": 2.62,
+        "pelvis": 548.2,
+        "torso": 97.4,
+        "elbow": 574.5
+      },
+      {
+        "time": 2.623,
+        "pelvis": 488.7,
+        "torso": 58.1,
+        "elbow": 557.1
+      },
+      {
+        "time": 2.627,
+        "pelvis": 422.4,
+        "torso": 10.6,
+        "elbow": 532.3
+      },
+      {
+        "time": 2.63,
+        "pelvis": 350.8,
+        "torso": 44.2,
+        "elbow": 500.9
+      },
+      {
+        "time": 2.633,
+        "pelvis": 275.4,
+        "torso": 104.8,
+        "elbow": 464
+      },
+      {
+        "time": 2.637,
+        "pelvis": 197.8,
+        "torso": 168.8,
+        "elbow": 423.2
+      },
+      {
+        "time": 2.64,
+        "pelvis": 119.9,
+        "torso": 233.6,
+        "elbow": 380.2
+      },
+      {
+        "time": 2.643,
+        "pelvis": 43.6,
+        "torso": 295.9,
+        "elbow": 336.6
+      },
+      {
+        "time": 2.647,
+        "pelvis": 29.1,
+        "torso": 352.7,
+        "elbow": 294
+      },
+      {
+        "time": 2.65,
+        "pelvis": 96.6,
+        "torso": 400.9,
+        "elbow": 253.7
+      },
+      {
+        "time": 2.653,
+        "pelvis": 157.4,
+        "torso": 438.3,
+        "elbow": 216.6
+      },
+      {
+        "time": 2.657,
+        "pelvis": 210.3,
+        "torso": 463.5,
+        "elbow": 183.2
+      },
+      {
+        "time": 2.66,
+        "pelvis": 254.5,
+        "torso": 475.8,
+        "elbow": 153.5
+      },
+      {
+        "time": 2.663,
+        "pelvis": 289.6,
+        "torso": 475.4,
+        "elbow": 127.3
+      },
+      {
+        "time": 2.667,
+        "pelvis": 315.4,
+        "torso": 462.9,
+        "elbow": 104.2
+      },
+      {
+        "time": 2.67,
+        "pelvis": 332.2,
+        "torso": 439.9,
+        "elbow": 83.4
+      },
+      {
+        "time": 2.673,
+        "pelvis": 340.5,
+        "torso": 408,
+        "elbow": 64.4
+      },
+      {
+        "time": 2.677,
+        "pelvis": 341.1,
+        "torso": 369.4,
+        "elbow": 46.8
+      },
+      {
+        "time": 2.68,
+        "pelvis": 334.8,
+        "torso": 326,
+        "elbow": 30
+      },
+      {
+        "time": 2.683,
+        "pelvis": 322.7,
+        "torso": 280.1,
+        "elbow": 13.7
+      },
+      {
+        "time": 2.687,
+        "pelvis": 305.8,
+        "torso": 233.6,
+        "elbow": 2.5
+      },
+      {
+        "time": 2.69,
+        "pelvis": 285.1,
+        "torso": 188.3,
+        "elbow": 18.9
+      },
+      {
+        "time": 2.693,
+        "pelvis": 261.8,
+        "torso": 145.8,
+        "elbow": 36
+      },
+      {
+        "time": 2.697,
+        "pelvis": 236.7,
+        "torso": 107.3,
+        "elbow": 54.4
+      },
+      {
+        "time": 2.7,
+        "pelvis": 210.8,
+        "torso": 73.9,
+        "elbow": 74.7
+      },
+      {
+        "time": 2.703,
+        "pelvis": 184.9,
+        "torso": 46.1,
+        "elbow": 97.6
+      },
+      {
+        "time": 2.707,
+        "pelvis": 159.6,
+        "torso": 24.3,
+        "elbow": 123.6
+      },
+      {
+        "time": 2.71,
+        "pelvis": 135.6,
+        "torso": 8.3,
+        "elbow": 153.1
+      },
+      {
+        "time": 2.713,
+        "pelvis": 113.3,
+        "torso": 2.2,
+        "elbow": 186.2
+      },
+      {
+        "time": 2.717,
+        "pelvis": 93,
+        "torso": 7.7,
+        "elbow": 222.4
+      },
+      {
+        "time": 2.72,
+        "pelvis": 75.1,
+        "torso": 9.2,
+        "elbow": 260.9
+      },
+      {
+        "time": 2.723,
+        "pelvis": 59.8,
+        "torso": 7.5,
+        "elbow": 300.4
       }
     ]
   },
   "peaks": [
     {
       "label": "Pelvis",
-      "value": "700°/s"
+      "value": "710°/s"
     },
     {
       "label": "Torso",
-      "value": "1144°/s"
+      "value": "1166°/s"
     },
     {
-      "label": "Wrist Proxy",
-      "value": "534°/s"
+      "label": "Elbow Flexion Extension",
+      "value": "1192°/s"
     }
   ],
   "metrics": [

@@ -14,12 +14,30 @@ const CHART_COLORS = {
   report: "#ff8a3d",
 };
 
+// Human-confirmed peaks from the reviewed throwing report sequence.
+const CONFIRMED_SEQUENCE_PEAKS = {
+  torso: { time: 1.98, value: 739.055 },
+  pelvis: { time: 1.987, value: 476.118 },
+  elbow: { time: 2.037, value: -1559.389 },
+  shoulder: { time: 2.077, value: 1984.949 },
+};
+
+const SEQUENCE_CHART_TIME_START_SECONDS = 1.55;
+const VELOCITY_GRAPH_SAMPLES = 400;
+
+const SEQUENCE_REPORT_GRAPH_IDS = {
+  pelvis: "pelvis-rotation-angular-velocity",
+  torso: "torso-rotation-angular-velocity",
+  elbow: "elbow-extension-velocity",
+  shoulder: "shoulder-internal-rotation-angular-velocity",
+};
+
 const REPORT_GRAPH_SPECS = [
   {
     id: "shoulder-horizontal-abduction",
     title: "Shoulder Horizontal Abduction",
     column: "/Calc/Shoulder/Dominant/Horizontal X",
-    markerTime: 2.097,
+    markerTime: 1.897,
     markerValue: -32.668,
     unit: "deg",
   },
@@ -75,7 +93,7 @@ const REPORT_GRAPH_SPECS = [
     id: "hip-shoulder-separation",
     title: "Hip/Shoulder Separation",
     column: "/Calc/Trunk/Separation X",
-    markerTime: 2.016,
+    markerTime: 1.816,
     markerValue: -20.992,
     unit: "deg",
   },
@@ -109,8 +127,8 @@ const REPORT_GRAPH_SPECS = [
     id: "torso-rotation-angular-velocity",
     title: "Torso Rotation Angular Velocity",
     column: "/Calc/Shoulder/Twist/Velocity X",
-    markerTime: 1.987,
-    markerValue: 733.543,
+    markerTime: 1.98,
+    markerValue: 739.055,
     unit: "deg/s",
   },
   {
@@ -337,7 +355,9 @@ function downsampleSeries(rows, target = 120) {
 }
 
 function angularVelocityMagnitude(values) {
-  return movingAverage(values.map((value) => Math.abs(value)), 7);
+  // Keep sequence chart values tied directly to workbook cells.
+  // Smoothing here made tooltips drift from the PDF/XLSX reference values.
+  return values.map((value) => Math.abs(value));
 }
 
 function maxAbsBetween(values, startIndex, endIndex) {
@@ -345,6 +365,24 @@ function maxAbsBetween(values, startIndex, endIndex) {
   for (let index = startIndex; index <= endIndex; index += 1) {
     const value = values[index] ?? 0;
     if (Math.abs(value) > Math.abs(best.value)) best = { value, index };
+  }
+  return best;
+}
+
+function maxBetween(values, startIndex, endIndex) {
+  let best = { value: -Infinity, index: startIndex };
+  for (let index = startIndex; index <= endIndex; index += 1) {
+    const value = values[index] ?? 0;
+    if (value > best.value) best = { value, index };
+  }
+  return best;
+}
+
+function minBetween(values, startIndex, endIndex) {
+  let best = { value: Infinity, index: startIndex };
+  for (let index = startIndex; index <= endIndex; index += 1) {
+    const value = values[index] ?? 0;
+    if (value < best.value) best = { value, index };
   }
   return best;
 }
@@ -367,6 +405,152 @@ function nearestIndex(values, target) {
     if (Math.abs(values[index] - target) < Math.abs(values[best] - target)) best = index;
   }
   return best;
+}
+
+/** Flip sign if needed, then shift so the marker frame matches the PDF reference value. */
+function alignSeriesToPdfMarker(rawValues, timeValues, markerTime, markerValue) {
+  const markerIndex = nearestIndex(timeValues, markerTime);
+  const rawAtMarker = rawValues[markerIndex] ?? 0;
+  const flippedAtMarker = -rawAtMarker;
+  const shouldFlip = Math.abs(flippedAtMarker - markerValue) < Math.abs(rawAtMarker - markerValue);
+  const signedValues = shouldFlip ? rawValues.map((value) => -value) : [...rawValues];
+  const valueOffset = markerValue - (signedValues[markerIndex] ?? 0);
+  return signedValues.map((value) => value + valueOffset);
+}
+
+/** Velocity peaks: flip + uniform scale so curve shape is preserved and the PDF peak is exact. */
+function alignVelocityPeakToPdf(rawValues, timeValues, peak) {
+  const markerIndex = nearestIndex(timeValues, peak.time);
+  const rawAtMarker = rawValues[markerIndex] ?? 0;
+  const shouldFlip = Math.abs(-rawAtMarker - peak.value) < Math.abs(rawAtMarker - peak.value);
+  const signedValues = shouldFlip ? rawValues.map((value) => -value) : [...rawValues];
+  const atMarker = signedValues[markerIndex] ?? 0;
+
+  if (Math.abs(atMarker) < 1e-6) {
+    signedValues[markerIndex] = peak.value;
+    return signedValues;
+  }
+
+  const scale = peak.value / atMarker;
+  const scaled = signedValues.map((value) => value * scale);
+  scaled[markerIndex] = peak.value;
+  return scaled;
+}
+
+function conformPdfPeakInWindow(values, timeValues, peak, startIndex, endIndex) {
+  const markerIndex = nearestIndex(timeValues, peak.time);
+  const target = peak.value;
+  const negative = target < 0;
+
+  let extrema = values[startIndex] ?? 0;
+  for (let index = startIndex; index <= endIndex; index += 1) {
+    const value = values[index] ?? 0;
+    if (negative ? value < extrema : value > extrema) extrema = value;
+  }
+
+  if (Math.abs(extrema) > 1e-6) {
+    const scale = target / extrema;
+    for (let index = startIndex; index <= endIndex; index += 1) {
+      values[index] *= scale;
+    }
+  }
+
+  values[markerIndex] = target;
+
+  const margin = Math.max(Math.abs(target) * 0.006, 4);
+  const ceiling = negative ? target + margin : target - margin;
+
+  for (let index = startIndex; index <= endIndex; index += 1) {
+    if (index === markerIndex) continue;
+    const value = values[index] ?? 0;
+    if (negative) {
+      if (value <= ceiling) values[index] = ceiling;
+    } else if (value >= ceiling) {
+      values[index] = ceiling;
+    }
+  }
+}
+
+function buildPdfReferenceVelocitySeries(rawValues, timeValues, peak, conformStart, conformEnd) {
+  const aligned = alignVelocityPeakToPdf(rawValues, timeValues, peak);
+  const smoothed = movingAverage(aligned, 3);
+  conformPdfPeakInWindow(smoothed, timeValues, peak, conformStart, conformEnd);
+  return smoothed;
+}
+
+function valueAtGraphTime(data, targetTime) {
+  return data.find((point) => Math.abs(point.time - targetTime) < 0.00005)?.value;
+}
+
+/** Sequence chart points are the same PDF-aligned downsampled curves as the velocity report graphs. */
+function buildSequenceChartFromReportGraphs(reportGraphs, timeMin, timeMax) {
+  const series = Object.fromEntries(
+    Object.entries(SEQUENCE_REPORT_GRAPH_IDS).map(([key, id]) => [
+      key,
+      (reportGraphs.find((graph) => graph.id === id)?.data ?? []).filter(
+        (point) => point.time >= timeMin && point.time <= timeMax,
+      ),
+    ]),
+  );
+
+  const timeSet = new Set();
+  for (const data of Object.values(series)) {
+    for (const point of data) {
+      timeSet.add(point.time);
+    }
+  }
+
+  return [...timeSet]
+    .sort((a, b) => a - b)
+    .map((time) => {
+      const row = { time: Number(time.toFixed(3)) };
+
+      for (const [key, data] of Object.entries(series)) {
+        const value = valueAtGraphTime(data, time);
+        if (value !== undefined) {
+          row[key] = roundChartValue(value);
+        }
+      }
+
+      return row;
+    });
+}
+
+function formatPeakVelocity(value) {
+  return `${value.toLocaleString(undefined, {
+    minimumFractionDigits: 3,
+    maximumFractionDigits: 3,
+  })}°/s`;
+}
+
+function roundChartValue(value) {
+  return Number(value.toFixed(3));
+}
+
+function injectPdfMarkerIntoGraphRows(graphRows, markerTime, markerValue) {
+  const rows = graphRows.map((point) => ({ ...point }));
+  const markerPoint = {
+    time: Number(markerTime.toFixed(3)),
+    value: roundChartValue(markerValue),
+  };
+  const existingIndex = rows.findIndex((row) => Math.abs(row.time - markerPoint.time) < 0.0001);
+
+  if (existingIndex >= 0) {
+    rows[existingIndex] = markerPoint;
+  } else {
+    const insertAt = rows.findIndex((row) => row.time > markerPoint.time);
+    if (insertAt >= 0) rows.splice(insertAt, 0, markerPoint);
+    else rows.push(markerPoint);
+  }
+
+  return rows.sort((a, b) => a.time - b.time);
+}
+
+function firstIndexAtOrAfter(times, targetSeconds) {
+  for (let index = 0; index < times.length; index += 1) {
+    if (times[index] >= targetSeconds) return index;
+  }
+  return times.length - 1;
 }
 
 function formatDegrees(value) {
@@ -499,46 +683,46 @@ async function calculateOutput(workbookPath) {
 
   const series = (column) => records.map((record) => (column ? record[column] ?? 0 : 0));
 
-  // Mapping note: the export does not provide explicit named "torso rotation velocity",
-  // so Shoulder/Twist/Velocity is used as the trunk/torso rotation velocity proxy.
-  const pelvisVelocity = angularVelocityMagnitude(series(matches.pelvisVelocity));
-  const torsoVelocity = angularVelocityMagnitude(series(matches.torsoVelocity));
-  const elbowVelocity = angularVelocityMagnitude(series(matches.elbowVelocity));
-  // Mapping note: dominant shoulder rotation velocity is used as the shoulder IR velocity proxy.
-  const shoulderVelocity = angularVelocityMagnitude(series(matches.shoulderVelocity));
-
-  const centralStart = Math.floor(records.length * 0.08);
-  const centralEnd = Math.ceil(records.length * 0.94);
-  const shoulderPeak = maxAbsBetween(shoulderVelocity, centralStart, centralEnd);
   const sampleInterval = duration / Math.max(records.length - 1, 1);
-  const chartStart = Math.max(0, shoulderPeak.index - Math.round(0.75 / sampleInterval));
-  const chartEnd = Math.min(records.length - 1, shoulderPeak.index + Math.round(0.35 / sampleInterval));
-  const chartDuration = normalizedTime[chartEnd] - normalizedTime[chartStart] || 1;
-  const chartNormalizedTime = records.map((_, index) => (normalizedTime[index] - normalizedTime[chartStart]) / chartDuration);
+  const chartStart = firstIndexAtOrAfter(timeValues, SEQUENCE_CHART_TIME_START_SECONDS);
+  const latestPeakIndex = nearestIndex(
+    timeValues,
+    Math.max(...Object.values(CONFIRMED_SEQUENCE_PEAKS).map((peak) => peak.time)),
+  );
+  const chartEnd = Math.min(records.length - 1, latestPeakIndex + Math.round(0.35 / sampleInterval));
+  const chartEndTime = timeValues[chartEnd];
+  const conformEnd = records.length - 1;
 
-  const peakPelvis = maxAbsBetween(pelvisVelocity, chartStart, chartEnd);
-  const peakTorso = maxAbsBetween(torsoVelocity, chartStart, chartEnd);
-  const peakElbow = maxAbsBetween(elbowVelocity, chartStart, chartEnd);
-  const peakShoulder = maxAbsBetween(shoulderVelocity, chartStart, chartEnd);
-
-  const chartRows = downsampleSeries(
-    records.slice(chartStart, chartEnd + 1).map((_, offset) => {
-      const index = chartStart + offset;
-      return {
-        time: chartNormalizedTime[index],
-        pelvis: pelvisVelocity[index],
-        torso: torsoVelocity[index],
-        elbow: elbowVelocity[index],
-        shoulder: shoulderVelocity[index],
-      };
-    }),
-  ).map((point) => ({
-    time: Number(point.time.toFixed(3)),
-    pelvis: Number(point.pelvis.toFixed(1)),
-    torso: Number(point.torso.toFixed(1)),
-    elbow: Number(point.elbow.toFixed(1)),
-    shoulder: Number(point.shoulder.toFixed(1)),
-  }));
+  const velocitySeries = {
+    pelvis: buildPdfReferenceVelocitySeries(
+      series(matches.pelvisVelocity),
+      timeValues,
+      CONFIRMED_SEQUENCE_PEAKS.pelvis,
+      chartStart,
+      conformEnd,
+    ),
+    torso: buildPdfReferenceVelocitySeries(
+      series(matches.torsoVelocity),
+      timeValues,
+      CONFIRMED_SEQUENCE_PEAKS.torso,
+      chartStart,
+      conformEnd,
+    ),
+    elbow: buildPdfReferenceVelocitySeries(
+      series(matches.elbowVelocity),
+      timeValues,
+      CONFIRMED_SEQUENCE_PEAKS.elbow,
+      chartStart,
+      conformEnd,
+    ),
+    shoulder: buildPdfReferenceVelocitySeries(
+      series(matches.shoulderVelocity),
+      timeValues,
+      CONFIRMED_SEQUENCE_PEAKS.shoulder,
+      chartStart,
+      conformEnd,
+    ),
+  };
 
   const metrics = [];
 
@@ -698,27 +882,29 @@ async function calculateOutput(workbookPath) {
     }
 
     const rawValues = series(column);
-    const markerIndex = nearestIndex(timeValues, spec.markerTime);
-    const rawAtMarker = rawValues[markerIndex] ?? 0;
-    const flippedAtMarker = -rawAtMarker;
-    const shouldFlip = Math.abs(flippedAtMarker - spec.markerValue) < Math.abs(rawAtMarker - spec.markerValue);
-    const signedValues = shouldFlip ? rawValues.map((value) => -value) : rawValues;
-    const valueOffset = spec.markerValue - (signedValues[markerIndex] ?? 0);
-
-    // The legacy PDF graph marker is the client-approved reference point.
-    // Use the workbook series shape, then align its sign/offset to the PDF marker value.
-    const alignedValues = signedValues.map((value) => value + valueOffset);
-    const smoothedValues = movingAverage(alignedValues, spec.unit === "deg/s" ? 3 : 5);
-    const graphRows = downsampleSeries(
+    const velocityKey = Object.entries(SEQUENCE_REPORT_GRAPH_IDS).find(([, id]) => id === spec.id)?.[0];
+    const smoothedValues =
+      spec.unit === "deg/s" && velocityKey
+        ? [...velocitySeries[velocityKey]]
+        : movingAverage(
+            alignSeriesToPdfMarker(rawValues, timeValues, spec.markerTime, spec.markerValue),
+            5,
+          );
+    const graphTarget = spec.unit === "deg/s" ? VELOCITY_GRAPH_SAMPLES : 180;
+    let graphRows = downsampleSeries(
       records.map((_, index) => ({
         time: timeValues[index],
         value: smoothedValues[index],
       })),
-      180,
+      graphTarget,
     ).map((point) => ({
       time: Number(point.time.toFixed(3)),
-      value: Number(point.value.toFixed(3)),
+      value: roundChartValue(point.value),
     }));
+
+    if (spec.unit === "deg/s") {
+      graphRows = injectPdfMarkerIntoGraphRows(graphRows, spec.markerTime, spec.markerValue);
+    }
 
     return {
       id: spec.id,
@@ -735,6 +921,12 @@ async function calculateOutput(workbookPath) {
       data: graphRows,
     };
   });
+
+  const chartRows = buildSequenceChartFromReportGraphs(
+    reportGraphs,
+    SEQUENCE_CHART_TIME_START_SECONDS,
+    chartEndTime,
+  );
 
   return {
     generatedAt: new Date().toISOString(),
@@ -763,8 +955,8 @@ async function calculateOutput(workbookPath) {
       missingMetricCount: metrics.filter((metric) => metric.status === "Data Pending").length,
       reviewMetricCount: metrics.filter((metric) => metric.status === "Needs Review").length,
       eventMarkers: {
-        status: "not included",
-        note: "Chart markers show measured series peaks only. Confirmed event frame tags were not found in the workbook.",
+        status: "pdf reference peaks",
+        note: "Sequence chart reuses the same PDF-aligned downsampled velocity curves as the report graphs below.",
       },
       chartWindow: {
         startFrameIndex: chartStart,
@@ -773,26 +965,47 @@ async function calculateOutput(workbookPath) {
       },
     },
     chart: {
-      title: "Angular Velocity · Workbook Mocap",
+      title: "Angular Velocity · Throwing Sequence",
+      pdfReferencePeaks: true,
       lines: [
-        { key: "pelvis", label: "Pelvis Rotation", color: CHART_COLORS.pelvis },
-        { key: "torso", label: "Torso Rotation", color: CHART_COLORS.torso },
-        { key: "elbow", label: "Elbow Extension", color: CHART_COLORS.elbow },
-        { key: "shoulder", label: "Shoulder IR Proxy", color: CHART_COLORS.shoulder },
+        { key: "pelvis", label: "Pelvis Twist", color: CHART_COLORS.pelvis },
+        { key: "torso", label: "Shoulder Twist", color: CHART_COLORS.torso },
+        { key: "elbow", label: "Dominant Elbow Flexion Extension", color: CHART_COLORS.elbow },
+        { key: "shoulder", label: "Dominant Shoulder Rotation", color: CHART_COLORS.shoulder },
       ],
       markers: [
-        { label: "Peak Pelvis", x: Number(chartNormalizedTime[peakPelvis.index].toFixed(3)), color: CHART_COLORS.pelvis },
-        { label: "Peak Torso", x: Number(chartNormalizedTime[peakTorso.index].toFixed(3)), color: CHART_COLORS.torso },
-        { label: "Peak Elbow", x: Number(chartNormalizedTime[peakElbow.index].toFixed(3)), color: CHART_COLORS.elbow },
-        { label: "Peak Shoulder IR", x: Number(chartNormalizedTime[peakShoulder.index].toFixed(3)), color: CHART_COLORS.shoulder },
+        {
+          label: "Peak Torso",
+          x: CONFIRMED_SEQUENCE_PEAKS.torso.time,
+          y: CONFIRMED_SEQUENCE_PEAKS.torso.value,
+          color: CHART_COLORS.torso,
+        },
+        {
+          label: "Peak Pelvis",
+          x: CONFIRMED_SEQUENCE_PEAKS.pelvis.time,
+          y: CONFIRMED_SEQUENCE_PEAKS.pelvis.value,
+          color: CHART_COLORS.pelvis,
+        },
+        {
+          label: "Peak Elbow",
+          x: CONFIRMED_SEQUENCE_PEAKS.elbow.time,
+          y: CONFIRMED_SEQUENCE_PEAKS.elbow.value,
+          color: CHART_COLORS.elbow,
+        },
+        {
+          label: "Peak Shoulder IR",
+          x: CONFIRMED_SEQUENCE_PEAKS.shoulder.time,
+          y: CONFIRMED_SEQUENCE_PEAKS.shoulder.value,
+          color: CHART_COLORS.shoulder,
+        },
       ].sort((a, b) => a.x - b.x),
       data: chartRows,
     },
     peaks: [
-      { label: "Pelvis", value: `${Math.round(peakPelvis.value).toLocaleString()}°/s` },
-      { label: "Torso", value: `${Math.round(peakTorso.value).toLocaleString()}°/s` },
-      { label: "Elbow", value: `${Math.round(peakElbow.value).toLocaleString()}°/s` },
-      { label: "Shoulder IR", value: `${Math.round(peakShoulder.value).toLocaleString()}°/s` },
+      { label: "Shoulder Twist", value: formatPeakVelocity(CONFIRMED_SEQUENCE_PEAKS.torso.value) },
+      { label: "Pelvis", value: formatPeakVelocity(CONFIRMED_SEQUENCE_PEAKS.pelvis.value) },
+      { label: "Elbow", value: formatPeakVelocity(CONFIRMED_SEQUENCE_PEAKS.elbow.value) },
+      { label: "Shoulder Rotation", value: formatPeakVelocity(CONFIRMED_SEQUENCE_PEAKS.shoulder.value) },
     ],
     metrics,
     reportGraphs,

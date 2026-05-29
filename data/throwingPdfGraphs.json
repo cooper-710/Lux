@@ -1,96 +1,6 @@
 {
-  "generatedAt": "2026-05-29T20:17:55.625Z",
-  "source": {
-    "workbook": "Gavin_Throwing.xlsx",
-    "workbookPath": "data/raw/Gavin_Throwing.xlsx",
-    "sheet": "Raw Throwing Data",
-    "sheetNames": [
-      "Raw Throwing Data",
-      "Info"
-    ],
-    "rawRows": 900,
-    "rawColumns": 69,
-    "headerRow": 1,
-    "framesProcessed": 896,
-    "timeColumn": "Time",
-    "firstTime": 0.013332,
-    "lastTime": 2.99655,
-    "durationSeconds": 2.983218,
-    "notes": "Raw sheet row 1 contains headers. Metadata/sample-rate rows are skipped before processing frame data."
-  },
-  "columns": {
-    "matched": {
-      "shoulderHorizontalAbduction": "/Calc/Shoulder/Dominant/Horizontal X",
-      "shoulderExternalRotation": "/Calc/Shoulder/Dominant/Rotation X",
-      "elbowFlexionAngle": "/Calc/Elbow/Dominant/FlexionExtension X",
-      "hipShoulderSeparation": "/Calc/Trunk/Separation X",
-      "leadKneeExtensionVelocity": "/Calc/Knee/Lead/FlexionExtension/Velocity X",
-      "shoulderInternalRotationVelocity": "/Calc/Shoulder/Dominant/Rotation/Velocity X",
-      "pelvisVelocity": "/Calc/Pelvis/Twist/Velocity X",
-      "torsoVelocity": "/Calc/Shoulder/Twist/Velocity X",
-      "elbowVelocity": "/Calc/Elbow/Dominant/FlexionExtension/Velocity X",
-      "shoulderVelocity": "/Calc/Shoulder/Dominant/Rotation/Velocity X"
-    },
-    "missing": [],
-    "uncertain": [
-      {
-        "metric": "Shoulder Horizontal Abduction",
-        "columns": [
-          "/Calc/Shoulder/Dominant/Horizontal X"
-        ],
-        "note": "Dominant shoulder horizontal angle requires side/sign convention confirmation."
-      },
-      {
-        "metric": "Shoulder External Rotation",
-        "columns": [
-          "/Calc/Shoulder/Dominant/Rotation X"
-        ],
-        "note": "Uses absolute dominant-shoulder rotation because external/internal sign convention is not defined in the workbook."
-      },
-      {
-        "metric": "Elbow Flexion Angle",
-        "columns": [
-          "/Calc/Elbow/Dominant/FlexionExtension X"
-        ],
-        "note": "Uses provisional max-ER marker because event tags are not present."
-      },
-      {
-        "metric": "Hip-Shoulder Separation",
-        "columns": [
-          "/Calc/Trunk/Separation X"
-        ],
-        "note": "Human confirmation needed for sign convention and event window."
-      },
-      {
-        "metric": "Lead Knee Extension Velocity",
-        "columns": [
-          "/Calc/Knee/Lead/FlexionExtension/Velocity X"
-        ],
-        "note": "Uses magnitude because knee flexion/extension sign convention is not confirmed."
-      },
-      {
-        "metric": "Shoulder Internal Rotation Velocity",
-        "columns": [
-          "/Calc/Shoulder/Dominant/Rotation/Velocity X"
-        ],
-        "note": "Dominant shoulder rotation velocity is used as the shoulder IR velocity proxy."
-      }
-    ]
-  },
-  "quality": {
-    "usableSheet": "Raw Throwing Data",
-    "missingMetricCount": 0,
-    "reviewMetricCount": 6,
-    "eventMarkers": {
-      "status": "pdf reference peaks",
-      "note": "Sequence chart reuses the same PDF-aligned downsampled velocity curves as the report graphs below."
-    },
-    "chartWindow": {
-      "startFrameIndex": 462,
-      "endFrameIndex": 724,
-      "frameCount": 263
-    }
-  },
+  "generatedAt": "2026-05-29T20:24:37.567Z",
+  "sourceNote": "PDF reference curves exported from process-throwing-mocap.mjs. Sequence chart reuses the four KPI velocity graphs exactly. Regenerate with npm run process:throwing && npm run export:throwing-graphs.",
   "chart": {
     "title": "Angular Velocity · Throwing Sequence",
     "pdfReferencePeaks": true,
@@ -132,7 +42,7 @@
       {
         "label": "Peak Elbow",
         "x": 2.037,
-        "y": -1559.389,
+        "y": 1559.389,
         "color": "#fbbf24"
       },
       {
@@ -145,170 +55,170 @@
     "data": [
       {
         "time": 1.553,
-        "pelvis": -242.468,
-        "torso": -100.317,
-        "elbow": -235.186,
-        "shoulder": -257.205
+        "pelvis": 242.468,
+        "torso": 100.317,
+        "elbow": 235.186,
+        "shoulder": 257.205
       },
       {
         "time": 1.56,
-        "pelvis": -240.913,
-        "torso": -142.406,
-        "elbow": -235.959,
-        "shoulder": -192.711
+        "pelvis": 240.913,
+        "torso": 142.406,
+        "elbow": 235.959,
+        "shoulder": 192.711
       },
       {
         "time": 1.57,
-        "pelvis": -211.775,
-        "torso": -131.644,
-        "elbow": -164.43,
-        "shoulder": -120.389
+        "pelvis": 211.775,
+        "torso": 131.644,
+        "elbow": 164.43,
+        "shoulder": 120.389
       },
       {
         "time": 1.577,
-        "pelvis": -181.634,
-        "torso": -96.679,
-        "elbow": -63.994,
-        "shoulder": -113.329
+        "pelvis": 181.634,
+        "torso": 96.679,
+        "elbow": 63.994,
+        "shoulder": 113.329
       },
       {
         "time": 1.583,
-        "pelvis": -149.212,
-        "torso": -70.135,
+        "pelvis": 149.212,
+        "torso": 70.135,
         "elbow": 14.001,
-        "shoulder": -101.04
+        "shoulder": 101.04
       },
       {
         "time": 1.59,
-        "pelvis": -118.147,
-        "torso": -66.538,
+        "pelvis": 118.147,
+        "torso": 66.538,
         "elbow": 7.39,
-        "shoulder": -54.44
+        "shoulder": 54.44
       },
       {
         "time": 1.6,
-        "pelvis": -85.067,
-        "torso": -105.505,
-        "elbow": -135.333,
+        "pelvis": 85.067,
+        "torso": 105.505,
+        "elbow": 135.333,
         "shoulder": 24.573
       },
       {
         "time": 1.607,
-        "pelvis": -74.784,
-        "torso": -131.979,
-        "elbow": -227.483,
+        "pelvis": 74.784,
+        "torso": 131.979,
+        "elbow": 227.483,
         "shoulder": 48.705
       },
       {
         "time": 1.613,
-        "pelvis": -72.06,
-        "torso": -151.922,
-        "elbow": -299.713,
+        "pelvis": 72.06,
+        "torso": 151.922,
+        "elbow": 299.713,
         "shoulder": 58.354
       },
       {
         "time": 1.62,
-        "pelvis": -71.924,
-        "torso": -158.858,
-        "elbow": -333.423,
+        "pelvis": 71.924,
+        "torso": 158.858,
+        "elbow": 333.423,
         "shoulder": 60.551
       },
       {
         "time": 1.63,
-        "pelvis": -67.809,
-        "torso": -132.359,
-        "elbow": -274.78,
+        "pelvis": 67.809,
+        "torso": 132.359,
+        "elbow": 274.78,
         "shoulder": 60.685
       },
       {
         "time": 1.637,
-        "pelvis": -62.204,
-        "torso": -93.477,
-        "elbow": -205.553,
+        "pelvis": 62.204,
+        "torso": 93.477,
+        "elbow": 205.553,
         "shoulder": 65.436
       },
       {
         "time": 1.643,
-        "pelvis": -54.04,
-        "torso": -55.251,
-        "elbow": -187.431,
+        "pelvis": 54.04,
+        "torso": 55.251,
+        "elbow": 187.431,
         "shoulder": 56.573
       },
       {
         "time": 1.65,
-        "pelvis": -44.206,
-        "torso": -33.535,
-        "elbow": -227.031,
+        "pelvis": 44.206,
+        "torso": 33.535,
+        "elbow": 227.031,
         "shoulder": 35.007
       },
       {
         "time": 1.657,
-        "pelvis": -33.716,
-        "torso": -29.01,
-        "elbow": -237.227,
+        "pelvis": 33.716,
+        "torso": 29.01,
+        "elbow": 237.227,
         "shoulder": 13.334
       },
       {
         "time": 1.667,
-        "pelvis": -17.714,
-        "torso": -54.028,
-        "elbow": -181.268,
-        "shoulder": -25.171
+        "pelvis": 17.714,
+        "torso": 54.028,
+        "elbow": 181.268,
+        "shoulder": 25.171
       },
       {
         "time": 1.673,
-        "pelvis": -5.064,
-        "torso": -77.474,
-        "elbow": -140.143,
-        "shoulder": -42.419
+        "pelvis": 5.064,
+        "torso": 77.474,
+        "elbow": 140.143,
+        "shoulder": 42.419
       },
       {
         "time": 1.68,
         "pelvis": 12.096,
-        "torso": -86.41,
-        "elbow": -92.852,
-        "shoulder": -45.47
+        "torso": 86.41,
+        "elbow": 92.852,
+        "shoulder": 45.47
       },
       {
         "time": 1.687,
         "pelvis": 30.394,
-        "torso": -76.651,
-        "elbow": -18.784,
-        "shoulder": -17.686
+        "torso": 76.651,
+        "elbow": 18.784,
+        "shoulder": 17.686
       },
       {
         "time": 1.697,
         "pelvis": 45.386,
-        "torso": -72.923,
+        "torso": 72.923,
         "elbow": 41.825,
         "shoulder": 35.731
       },
       {
         "time": 1.703,
         "pelvis": 48.33,
-        "torso": -101.689,
+        "torso": 101.689,
         "elbow": 4.573,
         "shoulder": 37.875
       },
       {
         "time": 1.71,
         "pelvis": 57.377,
-        "torso": -127.647,
-        "elbow": -30.774,
+        "torso": 127.647,
+        "elbow": 30.774,
         "shoulder": 23.459
       },
       {
         "time": 1.717,
         "pelvis": 74.79,
-        "torso": -121.964,
-        "elbow": -27.487,
+        "torso": 121.964,
+        "elbow": 27.487,
         "shoulder": 12.237
       },
       {
         "time": 1.727,
         "pelvis": 96.271,
-        "torso": -45.009,
-        "elbow": -0.363,
+        "torso": 45.009,
+        "elbow": 0.363,
         "shoulder": 27.805
       },
       {
@@ -329,315 +239,312 @@
         "time": 1.747,
         "pelvis": 79.664,
         "torso": 137.463,
-        "elbow": -6.933,
+        "elbow": 6.933,
         "shoulder": 10.93
       },
       {
         "time": 1.757,
         "pelvis": 57.328,
         "torso": 18.087,
-        "elbow": -21.451,
-        "shoulder": -77.762
+        "elbow": 21.451,
+        "shoulder": 77.762
       },
       {
         "time": 1.763,
         "pelvis": 42.065,
-        "torso": -129.023,
-        "elbow": -23.226,
-        "shoulder": -137.824
+        "torso": 129.023,
+        "elbow": 23.226,
+        "shoulder": 137.824
       },
       {
         "time": 1.77,
         "pelvis": 45.598,
-        "torso": -186.979,
-        "elbow": -28.827,
-        "shoulder": -180.901
+        "torso": 186.979,
+        "elbow": 28.827,
+        "shoulder": 180.901
       },
       {
         "time": 1.777,
         "pelvis": 66.67,
-        "torso": -132.743,
-        "elbow": -6.477,
-        "shoulder": -206.877
+        "torso": 132.743,
+        "elbow": 6.477,
+        "shoulder": 206.877
       },
       {
         "time": 1.787,
         "pelvis": 94.61,
-        "torso": -4.953,
+        "torso": 4.953,
         "elbow": 22.582,
-        "shoulder": -252.522
+        "shoulder": 252.522
       },
       {
         "time": 1.793,
         "pelvis": 99.129,
         "torso": 40.986,
-        "elbow": -32.882,
-        "shoulder": -278.943
+        "elbow": 32.882,
+        "shoulder": 278.943
       },
       {
         "time": 1.8,
         "pelvis": 100.628,
         "torso": 69.209,
-        "elbow": -130.145,
-        "shoulder": -288.073
+        "elbow": 130.145,
+        "shoulder": 288.073
       },
       {
         "time": 1.807,
         "pelvis": 112.58,
         "torso": 86.723,
-        "elbow": -213.474,
-        "shoulder": -285.21
+        "elbow": 213.474,
+        "shoulder": 285.21
       },
       {
         "time": 1.817,
         "pelvis": 141.269,
         "torso": 76.731,
-        "elbow": -251.828,
-        "shoulder": -269.716
+        "elbow": 251.828,
+        "shoulder": 269.716
       },
       {
         "time": 1.823,
         "pelvis": 150.924,
         "torso": 72.879,
-        "elbow": -104.965,
-        "shoulder": -237.65
+        "elbow": 104.965,
+        "shoulder": 237.65
       },
       {
         "time": 1.83,
         "pelvis": 155.232,
         "torso": 90.317,
         "elbow": 135.46,
-        "shoulder": -201.039
+        "shoulder": 201.039
       },
       {
         "time": 1.837,
         "pelvis": 161.39,
         "torso": 132.495,
         "elbow": 321.586,
-        "shoulder": -190.629
+        "shoulder": 190.629
       },
       {
         "time": 1.847,
         "pelvis": 182.699,
         "torso": 244.512,
         "elbow": 438.918,
-        "shoulder": -262.345
+        "shoulder": 262.345
       },
       {
         "time": 1.853,
         "pelvis": 197.958,
         "torso": 345.832,
         "elbow": 457.735,
-        "shoulder": -336.295
+        "shoulder": 336.295
       },
       {
         "time": 1.86,
         "pelvis": 206.748,
         "torso": 449.536,
         "elbow": 469.553,
-        "shoulder": -402.348
+        "shoulder": 402.348
       },
       {
         "time": 1.867,
         "pelvis": 206.444,
         "torso": 509.777,
         "elbow": 425.396,
-        "shoulder": -454.876
+        "shoulder": 454.876
       },
       {
         "time": 1.877,
         "pelvis": 187.896,
         "torso": 451.916,
         "elbow": 123.769,
-        "shoulder": -505.108
+        "shoulder": 505.108
       },
       {
         "time": 1.883,
         "pelvis": 172.949,
         "torso": 353.21,
-        "elbow": -73.314,
-        "shoulder": -510.834
+        "elbow": 73.314,
+        "shoulder": 510.834
       },
       {
         "time": 1.89,
         "pelvis": 168.18,
         "torso": 255.179,
-        "elbow": -140.351,
-        "shoulder": -514.807
+        "elbow": 140.351,
+        "shoulder": 514.807
       },
       {
         "time": 1.897,
         "pelvis": 175.936,
         "torso": 171.964,
-        "elbow": -81.41,
-        "shoulder": -552.732
+        "elbow": 81.41,
+        "shoulder": 552.732
       },
       {
         "time": 1.907,
         "pelvis": 207.598,
         "torso": 70.279,
         "elbow": 185.325,
-        "shoulder": -668.515
+        "shoulder": 668.515
       },
       {
         "time": 1.913,
         "pelvis": 242.953,
         "torso": 48.101,
         "elbow": 358.886,
-        "shoulder": -748.985
+        "shoulder": 748.985
       },
       {
         "time": 1.92,
         "pelvis": 287.099,
         "torso": 78.747,
         "elbow": 401.831,
-        "shoulder": -818.217
+        "shoulder": 818.217
       },
       {
         "time": 1.927,
         "pelvis": 336.417,
         "torso": 158.696,
         "elbow": 272.405,
-        "shoulder": -867.938
+        "shoulder": 867.938
       },
       {
         "time": 1.933,
         "pelvis": 385.193,
         "torso": 280.761,
         "elbow": 65.202,
-        "shoulder": -900.477
+        "shoulder": 900.477
       },
       {
         "time": 1.943,
         "pelvis": 446.718,
         "torso": 541.513,
-        "elbow": -131.227,
-        "shoulder": -947.509
+        "elbow": 131.227,
+        "shoulder": 947.509
       },
       {
         "time": 1.95,
         "pelvis": 471.811,
         "torso": 694.651,
-        "elbow": -154.091,
-        "shoulder": -961.593
+        "elbow": 154.091,
+        "shoulder": 961.593
       },
       {
         "time": 1.957,
         "pelvis": 472.118,
         "torso": 734.621,
-        "elbow": -136.81,
-        "shoulder": -936.064
+        "elbow": 136.81,
+        "shoulder": 936.064
       },
       {
         "time": 1.963,
         "pelvis": 460.116,
         "torso": 680.126,
-        "elbow": -111.63,
-        "shoulder": -880.594
+        "elbow": 111.63,
+        "shoulder": 880.594
       },
       {
         "time": 1.973,
         "pelvis": 456.596,
         "torso": 582.347,
-        "elbow": -105.832,
-        "shoulder": -814.499
+        "elbow": 105.832,
+        "shoulder": 814.499
       },
       {
         "time": 1.98,
         "pelvis": 467.15,
         "torso": 739.055,
-        "elbow": -189.84,
-        "shoulder": -831.739
+        "elbow": 189.84,
+        "shoulder": 831.739
       },
       {
         "time": 1.987,
         "pelvis": 476.118,
         "torso": 622.882,
-        "elbow": -318.093,
-        "shoulder": -886.4
+        "elbow": 318.093,
+        "shoulder": 886.4
       },
       {
         "time": 1.993,
         "pelvis": 468.124,
         "torso": 671.648,
-        "elbow": -425.569,
-        "shoulder": -962.929
+        "elbow": 425.569,
+        "shoulder": 962.929
       },
       {
         "time": 2.003,
         "pelvis": 459.143,
         "torso": 631.284,
-        "elbow": -495.205,
-        "shoulder": -1051.376
+        "elbow": 495.205,
+        "shoulder": 1051.376
       },
       {
         "time": 2.01,
         "pelvis": 457.404,
         "torso": 522.45,
-        "elbow": -529.244,
-        "shoulder": -1034.807
+        "elbow": 529.244,
+        "shoulder": 1034.807
       },
       {
         "time": 2.017,
         "pelvis": 457.076,
         "torso": 422.09,
-        "elbow": -632.896,
-        "shoulder": -920.06
+        "elbow": 632.896,
+        "shoulder": 920.06
       },
       {
         "time": 2.023,
         "pelvis": 452.492,
         "torso": 422.066,
-        "elbow": -858.31,
-        "shoulder": -705.451
+        "elbow": 858.31,
+        "shoulder": 705.451
       },
       {
         "time": 2.033,
         "pelvis": 435.407,
         "torso": 553.962,
-        "elbow": -1356.54,
-        "shoulder": -212.773
+        "elbow": 1356.54,
+        "shoulder": 212.773
       },
       {
         "time": 2.037,
-        "pelvis": 419.061,
-        "torso": 564.982,
-        "elbow": -1559.389,
-        "shoulder": 247.933
+        "elbow": 1559.389
       },
       {
         "time": 2.04,
         "pelvis": 419.061,
         "torso": 564.982,
-        "elbow": -1545.19,
+        "elbow": 1545.19,
         "shoulder": 247.933
       },
       {
         "time": 2.047,
         "pelvis": 392.834,
         "torso": 510.27,
-        "elbow": -1516.714,
+        "elbow": 1516.714,
         "shoulder": 790.661
       },
       {
         "time": 2.053,
         "pelvis": 354.327,
         "torso": 403.852,
-        "elbow": -1259.538,
+        "elbow": 1259.538,
         "shoulder": 1308.341
       },
       {
         "time": 2.063,
         "pelvis": 285.96,
         "torso": 210.761,
-        "elbow": -658.957,
+        "elbow": 658.957,
         "shoulder": 1826.216
       },
       {
         "time": 2.07,
         "pelvis": 245.064,
         "torso": 118.462,
-        "elbow": -302.137,
+        "elbow": 302.137,
         "shoulder": 1965.438
       },
       {
@@ -679,35 +586,35 @@
         "time": 2.113,
         "pelvis": 16.792,
         "torso": 369.59,
-        "elbow": -136.428,
+        "elbow": 136.428,
         "shoulder": 288.047
       },
       {
         "time": 2.123,
         "pelvis": 8.422,
         "torso": 203.473,
-        "elbow": -251.07,
+        "elbow": 251.07,
         "shoulder": 65.766
       },
       {
         "time": 2.13,
         "pelvis": 24.013,
         "torso": 75.42,
-        "elbow": -216.711,
+        "elbow": 216.711,
         "shoulder": 26.762
       },
       {
         "time": 2.137,
         "pelvis": 50.902,
         "torso": 33.215,
-        "elbow": -123.827,
+        "elbow": 123.827,
         "shoulder": 31.567
       },
       {
         "time": 2.143,
         "pelvis": 80.33,
         "torso": 71.819,
-        "elbow": -4.215,
+        "elbow": 4.215,
         "shoulder": 52.047
       },
       {
@@ -736,88 +643,88 @@
         "pelvis": 109.322,
         "torso": 133.274,
         "elbow": 55.728,
-        "shoulder": -46.507
+        "shoulder": 46.507
       },
       {
         "time": 2.183,
         "pelvis": 66.199,
         "torso": 106.424,
-        "elbow": -24.18,
-        "shoulder": -152.741
+        "elbow": 24.18,
+        "shoulder": 152.741
       },
       {
         "time": 2.19,
         "pelvis": 35.607,
         "torso": 123.034,
-        "elbow": -81.576,
-        "shoulder": -196.953
+        "elbow": 81.576,
+        "shoulder": 196.953
       },
       {
         "time": 2.197,
         "pelvis": 12.658,
         "torso": 168.493,
-        "elbow": -124.115,
-        "shoulder": -205.748
+        "elbow": 124.115,
+        "shoulder": 205.748
       },
       {
         "time": 2.203,
         "pelvis": 4.704,
         "torso": 212.468,
-        "elbow": -147.885,
-        "shoulder": -185.915
+        "elbow": 147.885,
+        "shoulder": 185.915
       },
       {
         "time": 2.21,
         "pelvis": 10.672,
         "torso": 230.881,
-        "elbow": -120.363,
-        "shoulder": -147.392
+        "elbow": 120.363,
+        "shoulder": 147.392
       },
       {
         "time": 2.22,
         "pelvis": 16.211,
         "torso": 176.088,
-        "elbow": -8.094,
-        "shoulder": -79.209
+        "elbow": 8.094,
+        "shoulder": 79.209
       },
       {
         "time": 2.227,
         "pelvis": 6.221,
         "torso": 120.346,
         "elbow": 62.399,
-        "shoulder": -24.272
+        "shoulder": 24.272
       },
       {
         "time": 2.233,
-        "pelvis": -9.091,
+        "pelvis": 9.091,
         "torso": 83.662,
         "elbow": 107.526,
         "shoulder": 35.531
       },
       {
         "time": 2.24,
-        "pelvis": -24.583,
+        "pelvis": 24.583,
         "torso": 55.875,
         "elbow": 142.677,
         "shoulder": 81.651
       },
       {
         "time": 2.25,
-        "pelvis": -37.672,
+        "pelvis": 37.672,
         "torso": 26.115,
         "elbow": 194.763,
         "shoulder": 122.013
       },
       {
         "time": 2.257,
-        "pelvis": -30.502,
+        "pelvis": 30.502,
         "torso": 24.555,
         "elbow": 207.398,
         "shoulder": 140.183
       },
       {
         "time": 2.263,
-        "pelvis": -6.013,
+        "pelvis": 6.013,
         "torso": 55.592,
         "elbow": 201.434,
         "shoulder": 144.316
@@ -833,85 +740,85 @@
         "time": 2.28,
         "pelvis": 133.023,
         "torso": 113.69,
-        "elbow": -9.115,
-        "shoulder": -22.431
+        "elbow": 9.115,
+        "shoulder": 22.431
       },
       {
         "time": 2.287,
         "pelvis": 190.152,
         "torso": 86.756,
-        "elbow": -158.637,
-        "shoulder": -99.708
+        "elbow": 158.637,
+        "shoulder": 99.708
       },
       {
         "time": 2.293,
         "pelvis": 226.484,
         "torso": 58.255,
-        "elbow": -208.689,
-        "shoulder": -127.639
+        "elbow": 208.689,
+        "shoulder": 127.639
       },
       {
         "time": 2.3,
         "pelvis": 236.665,
         "torso": 40.895,
-        "elbow": -177.309,
-        "shoulder": -120.272
+        "elbow": 177.309,
+        "shoulder": 120.272
       },
       {
         "time": 2.31,
         "pelvis": 214.434,
         "torso": 71.66,
-        "elbow": -90.53,
-        "shoulder": -86.952
+        "elbow": 90.53,
+        "shoulder": 86.952
       },
       {
         "time": 2.317,
         "pelvis": 179.456,
         "torso": 108.687,
-        "elbow": -60.644,
-        "shoulder": -66.439
+        "elbow": 60.644,
+        "shoulder": 66.439
       },
       {
         "time": 2.323,
         "pelvis": 139.881,
         "torso": 152.451,
-        "elbow": -43.639,
-        "shoulder": -52.817
+        "elbow": 43.639,
+        "shoulder": 52.817
       },
       {
         "time": 2.33,
         "pelvis": 105.609,
         "torso": 171.627,
         "elbow": 10.677,
-        "shoulder": -44.614
+        "shoulder": 44.614
       },
       {
         "time": 2.34,
         "pelvis": 75.675,
         "torso": 152.162,
         "elbow": 106.695,
-        "shoulder": -56.951
+        "shoulder": 56.951
       },
       {
         "time": 2.347,
         "pelvis": 75.051,
         "torso": 145.923,
         "elbow": 122.582,
-        "shoulder": -61.451
+        "shoulder": 61.451
       },
       {
         "time": 2.353,
         "pelvis": 94.42,
         "torso": 162.626,
         "elbow": 109.679,
-        "shoulder": -43.827
+        "shoulder": 43.827
       },
       {
         "time": 2.36,
         "pelvis": 131.313,
         "torso": 185.776,
         "elbow": 90.063,
-        "shoulder": -14.468
+        "shoulder": 14.468
       },
       {
         "time": 2.37,
@@ -931,14 +838,14 @@
         "time": 2.383,
         "pelvis": 198.205,
         "torso": 79.098,
-        "elbow": -53.094,
+        "elbow": 53.094,
         "shoulder": 26.737
       },
       {
         "time": 2.39,
         "pelvis": 170.113,
         "torso": 57.958,
-        "elbow": -57.437,
+        "elbow": 57.437,
         "shoulder": 53.107
       },
       {
@@ -968,8 +875,79 @@
         "torso": 196.167,
         "elbow": 73.757,
         "shoulder": 72.585
+      },
+      {
+        "time": 2.43,
+        "pelvis": 23.926,
+        "torso": 106.727,
+        "elbow": 116.761,
+        "shoulder": 4.482
+      },
+      {
+        "time": 2.437,
+        "pelvis": 14.843,
+        "torso": 53.825,
+        "elbow": 127.797,
+        "shoulder": 5.31
+      },
+      {
+        "time": 2.443,
+        "pelvis": 24.31,
+        "torso": 29.418,
+        "elbow": 113.734,
+        "shoulder": 17.383
+      },
+      {
+        "time": 2.45,
+        "pelvis": 48.736,
+        "torso": 40.403,
+        "elbow": 74.277,
+        "shoulder": 55.902
+      },
+      {
+        "time": 2.457,
+        "pelvis": 87.777,
+        "torso": 92.794,
+        "elbow": 11.122,
+        "shoulder": 91.915
+      },
+      {
+        "time": 2.467,
+        "pelvis": 137.46,
+        "torso": 137.736,
+        "elbow": 75.73,
+        "shoulder": 121.352
+      },
+      {
+        "time": 2.473,
+        "pelvis": 141.522,
+        "torso": 110.976,
+        "elbow": 69.501,
+        "shoulder": 120.684
+      },
+      {
+        "time": 2.48,
+        "pelvis": 118.124,
+        "torso": 51.88,
+        "elbow": 25.914,
+        "shoulder": 99.276
+      },
+      {
+        "time": 2.487,
+        "pelvis": 77.514,
+        "torso": 18.067,
+        "elbow": 56.322,
+        "shoulder": 45.644
+      },
+      {
+        "time": 2.497,
+        "pelvis": 26.399,
+        "torso": 47.153,
+        "elbow": 176.805,
+        "shoulder": 36.549
       }
-    ]
+    ],
+    "workbookValues": true
   },
   "peaks": [
     {
@@ -987,248 +965,6 @@
     {
       "label": "Shoulder Rotation",
       "value": "1,984.949°/s"
-    }
-  ],
-  "metrics": [
-    {
-      "key": "shoulder-horizontal-abduction",
-      "eyebrow": "Range",
-      "name": "Shoulder Horizontal Abduction",
-      "value": "111.5°",
-      "status": "Needs Review",
-      "sparkline": [
-        40.775,
-        5.506,
-        24.719,
-        49.272,
-        -0.183,
-        14.299,
-        -3.962,
-        1.333,
-        -11.349,
-        6.685,
-        95.214,
-        74.658,
-        1.841,
-        -4.33,
-        -11.202,
-        -10.365,
-        34.306,
-        86.542,
-        97.828,
-        95.299,
-        96.087,
-        94.294,
-        92.947,
-        85.934
-      ],
-      "finding": "Peak dominant-shoulder horizontal angle is 111.5° in the processed capture.",
-      "whyItMatters": "Shoulder horizontal position helps describe arm path and trunk relationship during the throw.",
-      "trainingFocus": "Review with confirmed foot-plant and arm-cocking frames before grading.",
-      "sourceColumns": [
-        "/Calc/Shoulder/Dominant/Horizontal X"
-      ],
-      "reviewNote": "Dominant shoulder horizontal angle requires side/sign convention confirmation."
-    },
-    {
-      "key": "shoulder-external-rotation",
-      "eyebrow": "Max ER Proxy",
-      "name": "Shoulder External Rotation",
-      "value": "161.5°",
-      "status": "Needs Review",
-      "sparkline": [
-        10.258,
-        10.827,
-        10.533,
-        25.074,
-        14.186,
-        16.028,
-        37.632,
-        35.659,
-        53.584,
-        42.392,
-        19.157,
-        5.414,
-        33.374,
-        33.639,
-        14.075,
-        83.233,
-        66.002,
-        45.557,
-        46.646,
-        38.452,
-        42.67,
-        46.057,
-        47.127,
-        38.676
-      ],
-      "finding": "Dominant-shoulder rotation reaches 161.5°; direction requires lab confirmation.",
-      "whyItMatters": "External rotation is a key loading marker before shoulder internal rotation acceleration.",
-      "trainingFocus": "Confirm the rotation sign convention and max-ER event before assigning a performance grade.",
-      "sourceColumns": [
-        "/Calc/Shoulder/Dominant/Rotation X"
-      ],
-      "reviewNote": "Uses absolute dominant-shoulder rotation because external/internal sign convention is not defined in the workbook."
-    },
-    {
-      "key": "elbow-flexion-angle",
-      "eyebrow": "Max ER Proxy",
-      "name": "Elbow Flexion Angle",
-      "value": "14.7°",
-      "status": "Needs Review",
-      "sparkline": [
-        77.615,
-        97.481,
-        97.913,
-        94.082,
-        122.692,
-        112.832,
-        128.75,
-        127.531,
-        131.611,
-        118.16,
-        73.912,
-        94.336,
-        120.194,
-        93.057,
-        84.212,
-        114.561,
-        10.238,
-        8.001,
-        13.918,
-        21.605,
-        26.351,
-        24.726,
-        24.125,
-        26.136
-      ],
-      "finding": "Elbow flexion is 14.7° at the provisional max-ER marker.",
-      "whyItMatters": "Elbow angle helps contextualize arm timing into acceleration.",
-      "trainingFocus": "Validate against tagged max-ER and ball-release frames.",
-      "sourceColumns": [
-        "/Calc/Elbow/Dominant/FlexionExtension X"
-      ],
-      "reviewNote": "Uses provisional max-ER marker because event tags are not present."
-    },
-    {
-      "key": "hip-shoulder-separation",
-      "eyebrow": "Peak",
-      "name": "Hip-Shoulder Separation",
-      "value": "-35.8°",
-      "status": "Needs Review",
-      "sparkline": [
-        21.048,
-        -16.835,
-        -17.056,
-        -27.51,
-        -24.315,
-        -21.312,
-        -15.85,
-        -18.091,
-        -26.068,
-        -13.987,
-        2.427,
-        1.403,
-        -3.172,
-        -9.398,
-        -21.31,
-        -8.552,
-        10.296,
-        28.868,
-        31.764,
-        34.729,
-        32.397,
-        34.465,
-        27.513,
-        22.767
-      ],
-      "finding": "Peak trunk separation in the workbook is -35.8°.",
-      "whyItMatters": "Separation is a proximal-to-distal transfer marker for the throwing sequence.",
-      "trainingFocus": "Confirm sign convention and preferred event window before grading.",
-      "sourceColumns": [
-        "/Calc/Trunk/Separation X"
-      ],
-      "reviewNote": "Human confirmation needed for sign convention and event window."
-    },
-    {
-      "key": "lead-knee-extension-velocity",
-      "eyebrow": "Block",
-      "name": "Lead Knee Extension Velocity",
-      "value": "638°/s",
-      "status": "Needs Review",
-      "sparkline": [
-        34.213,
-        104.017,
-        102.098,
-        72.559,
-        183.628,
-        102.726,
-        205.996,
-        249.194,
-        22.207,
-        82.091,
-        167.376,
-        242.855,
-        276.569,
-        50.277,
-        21.858,
-        6.493,
-        235.837,
-        85.545,
-        144.163,
-        54.677,
-        86.208,
-        27.921,
-        6.8,
-        103.721
-      ],
-      "finding": "Peak lead-knee flexion/extension velocity is 638°/s.",
-      "whyItMatters": "Lead-knee speed helps describe how the front side transfers force into the trunk and arm.",
-      "trainingFocus": "Confirm whether positive direction represents extension before using as a block grade.",
-      "sourceColumns": [
-        "/Calc/Knee/Lead/FlexionExtension/Velocity X"
-      ],
-      "reviewNote": "Uses magnitude because knee flexion/extension sign convention is not confirmed."
-    },
-    {
-      "key": "shoulder-internal-rotation-velocity",
-      "eyebrow": "Peak",
-      "name": "Shoulder Internal Rotation Velocity",
-      "value": "2,471°/s",
-      "status": "Needs Review",
-      "sparkline": [
-        99.62,
-        813.836,
-        365.262,
-        569.823,
-        145.138,
-        32.583,
-        164.373,
-        351.351,
-        152.84,
-        914.552,
-        502.512,
-        1186.199,
-        144.657,
-        52.037,
-        246.381,
-        1129.653,
-        1892.417,
-        99.235,
-        78.927,
-        143.648,
-        82.647,
-        64.45,
-        77.814,
-        146.258
-      ],
-      "finding": "Peak dominant-shoulder rotation velocity is 2,471°/s.",
-      "whyItMatters": "Shoulder IR velocity is the final high-speed transfer marker before release.",
-      "trainingFocus": "Confirm internal-rotation direction and ball-release timing.",
-      "sourceColumns": [
-        "/Calc/Shoulder/Dominant/Rotation/Velocity X"
-      ],
-      "reviewNote": "Dominant shoulder rotation velocity is used as the shoulder IR velocity proxy."
     }
   ],
   "reportGraphs": [

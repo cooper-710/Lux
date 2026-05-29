@@ -27,7 +27,7 @@ export const hittingPdfReport = {
       "Improving Gavin's ability to initiate rotation from the pelvis and maintain a stable torso during the early stages of acceleration may enhance his sequencing, improve energy transfer, and allow him to more consistently access the high-level movement qualities already present within his swing.",
     ],
     optimalSequence: "Pelvis Rotation → Torso Rotation → Arm Extension",
-    athleteSequence: "Trunk Rotation → Pelvic Rotation → Arm Extension",
+    athleteSequence: "Pelvic Rotation → Torso Rotation → Arm Extension",
   },
   kpiHeading: "Key Performance indicators",
   sections: [

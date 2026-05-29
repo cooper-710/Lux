@@ -1,6 +1,8 @@
 import type { StatusTone } from "@/lib/utils";
 import hittingMocapJson from "@/data/processed/hitting-mocap.json";
 import throwingMocapJson from "@/data/processed/gavinThrowing.json";
+import throwingPdfGraphsJson from "@/data/throwingPdfGraphs.json";
+import { buildThrowingSequenceChart } from "@/data/buildThrowingSequenceChart";
 import { hittingPdfReport } from "@/data/hittingPdfReport";
 import { movementPdfReport } from "@/data/movementPdfReport";
 import { throwingPdfReport } from "@/data/throwingPdfReport";
@@ -46,6 +48,8 @@ export type ChartLine = {
 export type EventMarker = {
   label: string;
   x: number;
+  /** Reference peak value (deg/s) when matching a PDF report marker. */
+  y?: number;
   color?: string;
 };
 
@@ -59,6 +63,10 @@ export type SequenceChartData = {
   lines: ChartLine[];
   markers: EventMarker[];
   data: ChartPoint[];
+  /** When true, plot workbook values as-is (no client-side peak flattening). */
+  workbookValues?: boolean;
+  /** When true, clamp smoothed series to PDF reference peak times/values. */
+  pdfReferencePeaks?: boolean;
 };
 
 export type PeakPoint = {
@@ -149,6 +157,7 @@ const makeChartData = (
 
 const hittingMocap = hittingMocapJson as ProcessedMocap;
 const throwingMocap = throwingMocapJson as ProcessedMocap;
+const throwingPdfGraphs = throwingPdfGraphsJson as Pick<ProcessedMocap, "chart" | "peaks" | "reportGraphs">;
 const hittingSourceLine = `Source: ${hittingMocap.source.workbook} · ${hittingMocap.source.sheet} · ${hittingMocap.source.framesProcessed} frames processed`;
 const throwingSourceLine = `Source: ${throwingMocap.source.workbook} · ${throwingMocap.source.sheet} · ${throwingMocap.source.framesProcessed} frames processed`;
 
@@ -168,12 +177,12 @@ function sequenceFromPeakMarkers(
 const hittingAthleteSequence = sequenceFromPeakMarkers(hittingMocap.chart.markers, {
   "Peak Pelvis": "Pelvis Rotation",
   "Peak Torso": "Torso Rotation",
-  "Peak Wrist": "Wrist / Barrel Proxy",
+  "Peak Elbow": "Dominant Elbow Flexion Extension",
 });
 
 const throwingAthleteSequence = sequenceFromPeakMarkers(throwingMocap.chart.markers, {
+  "Peak Torso": "Shoulder Twist",
   "Peak Pelvis": "Pelvis Rotation",
-  "Peak Torso": "Torso Rotation",
   "Peak Elbow": "Elbow Extension",
   "Peak Shoulder IR": "Shoulder Internal Rotation",
 });
@@ -210,8 +219,8 @@ export const overviewSummary: SummaryItem[] = [
   {
     title: "Throwing Sequence",
     status: "Needs Review",
-    main: "Workbook Loaded",
-    supporting: `${throwingMocap.source.framesProcessed} mocap frames parsed from ${throwingMocap.source.sheet}.`,
+    main: "PDF Graphs Loaded",
+    supporting: "Sequence and KPI charts use reviewed PDF reference curves and peak markers.",
   },
 ];
 
@@ -377,7 +386,7 @@ export const hittingSection = {
     {
       number: "02",
       title: "Impact is currently proxied.",
-      body: "The workbook does not include explicit load, foot plant, or contact labels, so the chart uses peak dominant-wrist speed as a repeatable impact proxy.",
+      body: "The workbook does not include explicit load, foot plant, or contact labels, so chart timing still uses peak dominant-wrist speed as a repeatable impact proxy while the orange sequence trace follows dominant elbow flexion/extension velocity.",
     },
     {
       number: "03",
@@ -388,7 +397,7 @@ export const hittingSection = {
   optimalSequence: [
     { number: "01", label: "Pelvis Rotation" },
     { number: "02", label: "Torso Rotation" },
-    { number: "03", label: "Arm / Barrel Delivery" },
+    { number: "03", label: "Dominant Elbow Flexion Extension" },
   ] satisfies SequenceStep[],
   athleteSequence: hittingAthleteSequence,
   chart: hittingMocap.chart,
@@ -428,18 +437,18 @@ export const throwingSection = {
   findings: [
     {
       number: "01",
-      title: "Workbook mocap is driving this section.",
-      body: `${throwingMocap.source.sheet} supplied ${throwingMocap.source.framesProcessed} usable frames after header, metadata, and sample-rate rows were removed.`,
+      title: "Graphs match the reviewed throwing report.",
+      body: "Sequence and KPI charts use PDF reference curves and marker values — not live workbook exports. Regenerate from scripts only when the reference report changes.",
     },
     {
       number: "02",
-      title: "Peak timing is now workbook-derived.",
-      body: "The sequence chart marks the measured peak of each plotted throwing velocity series. Event timing still needs confirmed frame tags for deeper interpretation.",
+      title: "Peak timing matches the reviewed report.",
+      body: "Confirmed peaks: shoulder twist 739.055°/s @ 1.980 s, pelvis 476.118°/s @ 1.987 s, elbow -1559.389°/s @ 2.037 s, shoulder rotation 1984.949°/s @ 2.077 s.",
     },
     {
       number: "03",
       title: "Interpretation needs lab review.",
-      body: `${throwingMocap.quality.reviewMetricCount} KPI values are real workbook calculations, but sign conventions, side mappings, and event frames should be confirmed before grading the athlete.`,
+      body: `${throwingMocap.quality.reviewMetricCount} KPI summary values still reference workbook metrics where applicable; sign conventions and event frames should be confirmed before grading.`,
     },
   ] satisfies Finding[],
   optimalSequence: [
@@ -449,10 +458,10 @@ export const throwingSection = {
     { number: "04", label: "Shoulder Internal Rotation" },
   ] satisfies SequenceStep[],
   athleteSequence: throwingAthleteSequence,
-  chart: throwingMocap.chart,
-  peaks: throwingMocap.peaks,
+  chart: buildThrowingSequenceChart(throwingPdfGraphs.reportGraphs ?? [], throwingPdfGraphs.chart),
+  peaks: throwingPdfGraphs.peaks,
   metrics: throwingMocap.metrics,
-  reportGraphs: throwingMocap.reportGraphs ?? [],
+  reportGraphs: throwingPdfGraphs.reportGraphs ?? [],
   trainingFocus: [
     {
       number: "01",
